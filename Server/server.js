@@ -28,16 +28,15 @@ app.use(morgan('dev'));
 
 const authRoutes = require('./routes/authRoute.js')
 app.use('/api/v1/auth',authRoutes)
-// app.use(express.static(path.join(__dirname, "../frontend/public")));
 
-// const __dirname = path.resolve();
+
 app.use(express.static(path.join(__dirname, '../client/build')));
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 const server = app.listen(process.env.PORT, () => {
-  console.log(`Server is working on http://localhost:${process.env.PORT}`);
+  console.log(`Server is working on ${process.env.PORT}`);
 });
 
 
