@@ -27,7 +27,10 @@ const morgan = require('morgan')
 app.use(morgan('dev'));
 
 const authRoutes = require('./routes/authRoute.js')
-app.use('/api/v1/auth',authRoutes)
+app.use('/api/auth',authRoutes)
+
+const productRoutes = require('./routes/productRoute.js')
+app.use('/api/product',productRoutes)
 
 
 app.use(express.static(path.join(__dirname, '../Client/build')));
