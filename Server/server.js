@@ -30,9 +30,9 @@ const authRoutes = require('./routes/authRoute.js')
 app.use('/api/v1/auth',authRoutes)
 
 
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, '../Client/build')));
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.join(__dirname, '../Client/build/index.html'));
 });
 
 const server = app.listen(process.env.PORT, () => {
