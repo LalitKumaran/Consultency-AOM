@@ -1,0 +1,221 @@
+*{
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+.maincontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+  }
+  .logo {
+    font-size: 2.7rem;
+    font-weight: bolder;
+    color: #222;
+    text-decoration: none;
+  }
+  .logo i {
+    color: #bac34e;
+    padding-right: 0.5rem;
+  }
+  .navbar a {
+    font-size: 1.7rem;
+    color: #666;
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+  .navbar a:hover {
+    color: #bac34e;
+  }
+  .icons{
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    color: #666;
+  }
+  .icons:hover {
+    color: #bac34e;
+  }
+  .menu{
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    color: #666;
+    display:none
+  }
+  @keyframes fadeLeft {
+    0% {
+      transform: translateX(-5rem);
+      opacity: 0;
+    }
+  }
+  @keyframes fadeUp {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+  }
+  .menu:hover {
+    color: #bac34e;
+  }
+  .searchform {
+    position: absolute;
+    top: 115%;
+    right: 2rem;
+    width: 50rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    height: 5.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    background: #fff;
+  }
+  .searchform input {
+    height: 100%;
+    width: 100%;
+    padding: 0 1.2rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    color: #222;
+    text-transform: none;
+    border:none;
+  }
+  .searchform label {
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    margin-right: 1.7rem;
+    cursor: pointer;
+    color: #666;
+  }
+  .searchform label:hover {
+    color: #bac34e;
+  }
+  /* .header .shopping-cart {
+    position: absolute;
+    top: 115%;
+    right: -105%;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    width: 35rem;
+    padding: 2rem;
+  }
+  .header .shopping-cart.active {
+    right: 2rem;
+    transition: 0.4s linear;
+  }
+  .header .shopping-cart .box {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .header .shopping-cart .box .fa-times {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #666;
+    cursor: pointer;
+  }
+  .header .shopping-cart .box .fa-times:hover {
+    color: #bac34e;
+  }
+  .header .shopping-cart .box img {
+    height: 10rem;
+  }
+  .header .shopping-cart .box .content h3 {
+    font-size: 1.7rem;
+    padding-bottom: 0.5rem;
+    color: #222;
+  }
+  .header .shopping-cart .box .content span {
+    font-size: 1.5rem;
+    color: #666;
+  }
+  .header .shopping-cart .box .content span.multiply {
+    margin: 0 0.5rem;
+  }
+  .header .shopping-cart .total {
+    color: #666;
+    text-align: center;
+    font-size: 2.2rem;
+  }
+  .header .shopping-cart .total span {
+    color: #222;
+  }
+  .header .shopping-cart .btn {
+    text-align: center;
+    width: 100%;
+  } */
+
+  @media (max-width: 991px) {
+    html {
+      font-size: 55%;
+    }
+    .maincontainer {
+      padding: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .menu {
+      display: inline-block;
+    }
+    
+    .searchform {
+      width: 100%;
+      right: 0;
+      border-radius: 0;
+    }
+    .searchform.active {
+      top: 99%;
+      border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+    }
+    .navbar {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+              clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .navbar.active {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+              clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .navbar a {
+      margin: 1.5rem;
+      padding: 1.5rem;
+      background: #f3f3f3;
+      font-size: 2rem;
+      display: block;
+      border-radius: 0.5rem;
+    }
+  }
+  @media (max-width: 450px) {
+    html {
+      font-size: 50%;
+    }
+  }
+  

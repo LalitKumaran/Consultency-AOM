@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    background: #bac34e;
+    color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: #222;
+  }
+  
+  .home {
+    padding: 1rem 9%;
+    background: url('../../../public/assets/image/home-bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+  }
+  .home .slidescontainer .slide {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    /* display: none; */
+  }
+  .home .slidescontainer .slide.active {
+    display: flex;
+  }
+  .home .slidescontainer .slide .content {
+    flex: 1 1 40rem;
+    animation: fadeLeft 0.4s linear 0.4s backwards;
+  }
+  .home .slidescontainer .slide .content span {
+    color: #666;
+    font-size: 2.5rem;
+  }
+  .home .slidescontainer .slide .content h3 {
+    font-size: 6rem;
+    color: #222;
+    padding: 0.5rem 0;
+  } 
+  .home .slidescontainer .slide .image {
+    flex: 1 1 40rem;
+    margin: 3rem 0;
+  }
+  .home .slidescontainer .slide .image img {
+    width: 100%;
+    animation: fadeUp 0.4s linear;
+  }
+  .home .nextslide,
+  .home .prevslide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: #fff;
+    font-size: 3rem;
+    color: #222;
+    cursor: pointer;
+  }
+  .home .nextslide:hover,
+  .home .prevslide:hover {
+    background: #bac34e;
+    color: #fff;
+  }
+  .home .prevslide {
+    left: 2rem;
+  }
+  .home .nextslide {
+    right: 2rem;
+  }
+  @media (max-width: 450px) {
+    html {
+      font-size: 50%;
+    }
+    .home .slides-container .slide .content h3 {
+      font-size: 5rem;
+    }
+  }
+  @media (max-width: 991px) {
+    html {
+      font-size: 55%;
+    }
+    .home {
+      padding: 3rem 2rem;
+    }
+    .home #next-slide,
+    .home #prev-slide {
+      transform: translateY(0);
+      top: 88%;
+    }
+    .home #prev-slide {
+      left: auto;
+      right: 8rem;
+    }
+  }

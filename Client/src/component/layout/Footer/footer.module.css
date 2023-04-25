@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+.footer {
+    margin-top: 9%;
+    padding: 3rem 9%;
+    background: #f3f3f3;
+  }
+  .footer .boxcontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+  }
+  .footer .boxcontainer .box h3 {
+    font-size: 2.2rem;
+    color: #222;
+    padding: 1rem 0;
+  }
+  .footer .boxcontainer .box p {
+    font-size: 1.5rem;
+    color: #666;
+    padding-bottom: 0.5rem;
+  }
+  .footer .boxcontainer .box a {
+    font-size: 1.4rem;
+    color: #666;
+    padding: 1rem 0;
+    display: block;
+  }
+  .footer .boxcontainer .box a:hover {
+    color: #bac34e;
+  }
+  .footer .boxcontainer .box a:hover i {
+    padding-right: 2rem;
+  }
+  .footer .boxcontainer .box a i {
+    padding-right: 0.5rem;
+    color: #bac34e;
+  }
+  .footer .boxcontainer .box form input[type=email] {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    color: #222;
+    margin: 1rem 0;
+    text-transform: none;
+  }
+  .footer .boxcontainer .box .payment {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    background: #bac34e;
+    color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: #222;
+  }
