@@ -32,6 +32,9 @@ app.use('/api/auth',authRoutes)
 const productRoutes = require('./routes/productRoute.js')
 app.use('/api/product',productRoutes)
 
+const cartRoutes = require('./routes/cartRoute.js')
+app.use('/api/cart',productRoutes)
+
 
 app.use(express.static(path.join(__dirname, '../Client/build')));
 app.get('*', function (req, res) {
