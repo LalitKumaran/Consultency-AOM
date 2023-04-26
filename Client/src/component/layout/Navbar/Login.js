@@ -87,7 +87,7 @@ export const Login = () => {
         //profile
         
         <div className={`${login_styles.loginform} active`}>
-            <FaRegUserCircle/>
+            <p className='login-profile'><FaRegUserCircle/></p>
         <p >{user.name}</p>
         <p>{user.phone}</p>
         <p>{user.address}</p>

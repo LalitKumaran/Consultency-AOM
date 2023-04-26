@@ -28,6 +28,11 @@ html {
     right: 2rem;
     transition: 0.4s linear;
   }
+  .loginform .login-profile
+  {
+    height: 200px;
+    width: 200px;
+  }
   .loginform button
   {
     display: flex;
