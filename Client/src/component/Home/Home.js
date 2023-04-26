@@ -70,7 +70,7 @@ export function Home(){
 
             <div className={home_styles.slide}>
                 <div className={home_styles.content}>
-                    <span>fresh and organic</span>
+                    <span>{carouselList[a].tag1}</span>
                     <h3>upto 50% off</h3>
                     <a href="#" className={home_styles.btn}>shop now</a>
                 </div>
