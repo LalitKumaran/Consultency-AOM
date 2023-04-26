@@ -4,7 +4,7 @@ import login_styles from './login.module.css'
 import axios from 'axios'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {FaRegUserCircle} from 'react-icons'
 export const Login = () => {
 // toast.configure();
     const navigate = useNavigate()
@@ -87,7 +87,7 @@ export const Login = () => {
         //profile
         
         <div className={`${login_styles.loginform} active`}>
-<FontAwesomeIcon icon="fa-solid fa-user" />
+            <FaRegUserCircle/>
         <p >{user.name}</p>
         <p>{user.phone}</p>
         <p>{user.address}</p>
