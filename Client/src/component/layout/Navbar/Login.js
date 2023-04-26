@@ -2,6 +2,8 @@ import {useState,useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import login_styles from './login.module.css'
 import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Login = () => {
 
@@ -20,7 +22,7 @@ export const Login = () => {
                 setUser(res.data.user);
                 sessionStorage.setItem('user',JSON.stringify(res.data.user))
             }
-            alert(res.data.message)
+            // toastify.success(res.data.message)
         }).catch((err)=>{console.log(err)})
     }
 
@@ -40,7 +42,7 @@ export const Login = () => {
             setRegisterForm(!registerForm)
         }
         else{
-            alert("Session Exists")
+            toast("Session Exists")
         } 
     }
 
@@ -57,7 +59,7 @@ export const Login = () => {
                     sessionStorage.setItem('user',JSON.stringify(res.data.user))
                 }
             }
-            alert(res.data.message)
+            toast(res.data.message)
         }).catch((err)=>{console.log(err)})
     }
 
