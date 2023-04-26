@@ -87,8 +87,10 @@ export const Login = () => {
         //profile
         
         <div className={`${login_styles.loginform} active`}>
+            <div className={login_styles.userform}>
             <p className='login-profile'><FaRegUserCircle/></p>
         <p >{user.name}</p>
+        </div>
         <p>{user.phone}</p>
         <p>{user.address}</p>
         <button onClick={logout}> Logout </button>

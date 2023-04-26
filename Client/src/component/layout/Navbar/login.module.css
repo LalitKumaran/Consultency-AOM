@@ -27,6 +27,15 @@ html {
     right: 2rem;
     transition: 0.4s linear;
   }
+  .userform
+  {
+    display: flex;
+    margin-left: 2px;
+    margin-right: 3px;
+    margin-top: 2px;
+    margin-bottom: 3px;
+
+  }
   .loginform h3 {
     color: #222;
     text-transform: uppercase;
