@@ -4,6 +4,7 @@ import login_styles from './login.module.css'
 import axios from 'axios'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export const Login = () => {
 // toast.configure();
     const navigate = useNavigate()
@@ -41,7 +42,7 @@ export const Login = () => {
             setRegisterForm(!registerForm)
         }
         else{
-            toast("Session Exists")
+            toast.warning("Session Exists")
         } 
     }
 
@@ -58,7 +59,7 @@ export const Login = () => {
                     sessionStorage.setItem('user',JSON.stringify(res.data.user))
                 }
             }
-            toast(res.data.message)
+            toast.success(res.data.message)
         }).catch((err)=>{console.log(err)})
     }
 
@@ -84,8 +85,10 @@ export const Login = () => {
 
 
         //profile
+        
         <div className={`${login_styles.loginform} active`}>
-        <p>{user.name}</p>
+<FontAwesomeIcon icon="fa-solid fa-user" />
+        <p >{user.name}</p>
         <p>{user.phone}</p>
         <p>{user.address}</p>
         <button onClick={logout}> Logout </button>

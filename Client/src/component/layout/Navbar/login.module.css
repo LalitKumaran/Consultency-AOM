@@ -16,6 +16,7 @@ html {
   scroll-behavior: smooth;
 }
 .loginform {
+  display: flex;
     position: absolute;
     top: 115%;
     right: 105%;
@@ -26,6 +27,11 @@ html {
     padding: 2rem;
     right: 2rem;
     transition: 0.4s linear;
+  }
+  .loginform button
+  {
+    display: flex;
+    justify-content: end;
   }
   .loginform h3 {
     color: #222;
