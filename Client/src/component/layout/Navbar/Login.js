@@ -4,9 +4,8 @@ import login_styles from './login.module.css'
 import axios from 'axios'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-toast.configure();
 export const Login = () => {
-
+toast.configure();
     const navigate = useNavigate()
     const [user,setUser] = useState(JSON.parse(sessionStorage.getItem('user')))
 
