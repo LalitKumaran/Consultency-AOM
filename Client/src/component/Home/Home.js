@@ -7,16 +7,13 @@ import {FaArrowRight,FaArrowLeft} from 'react-icons/fa'
 // import { Carousel } from 'react-responsive-carousel';
 export function Home(){
 
-    const [products] = useRef(null)
     const [carouselList,setCarouselList] = useState([{'tag1':"fresh and organic",'tag2':"upto 50% off","img":"assets/image/pngeggg (8).png"},
     {'tag1':"fresh and organic",'tag2':"upto 50% off","img":"assets/image/pngegg (8).png"},
     {'tag1':"fresh and organic",'tag2':"upto 50% off","img":"assets/image/pngegg (9).png"}])
 
-    const scrollToPrducts = (elementRef) => {
-        window.scrollTo({
-            top : elementRef.current.offsetTop,
-            behavior:'smooth'
-        });
+    const scr = () => {
+        var element = document.getElementById('prd')
+        element.scrollIntoView({behavior:"smooth"});
     }
     
     const [activeCarousel,setActiveCarousel] = useState(0) 
@@ -70,7 +67,7 @@ export function Home(){
         {/* <FaArrowRight  className={home_styles.nextslide} onClick={next} /> */}
         {/* <FaArrowLeft className={home_styles.prevslide} onClick={prev}/> */}
         </div>
-        <Products ref={products}/>
+        <Products/>
     </>
     )
 }

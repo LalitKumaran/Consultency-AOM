@@ -70,7 +70,6 @@ return (
     <h1 className={product_styles.title}> our <span>products</span> <a href="#"></a> </h1>
 
     <div className={product_styles.boxcontainer}>
-    { products.map((p,index) =>
 
         <div className={product_styles.box}>
             <div className={product_styles.icons}>
@@ -93,7 +92,6 @@ return (
                 </div>
             </div>
         </div>
-    )}
 
         <div className={product_styles.box}>
             <div className={product_styles.icons}>
