@@ -27,17 +27,19 @@ const morgan = require('morgan')
 app.use(morgan('dev'));
 
 const authRoutes = require('./routes/authRoute.js')
-app.use('/api/v1/auth',authRoutes)
-// app.use(express.static(path.join(__dirname, "../frontend/public")));
+app.use('/api/auth',authRoutes)
 
-// const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, '../client/build')));
+const productRoutes = require('./routes/productRoute.js')
+app.use('/api/product',productRoutes)
+
+
+app.use(express.static(path.join(__dirname, '../Client/build')));
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.join(__dirname, '../Client/build/index.html'));
 });
 
 const server = app.listen(process.env.PORT, () => {
-  console.log(`Server is working on http://localhost:${process.env.PORT}`);
+  console.log(`Server is working on ${process.env.PORT}`);
 });
 
 

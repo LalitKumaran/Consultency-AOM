@@ -14,7 +14,7 @@ export const Login = () => {
         e.preventDefault()
         const data = {email:e.target.email.value,password:e.target.password.value}
         console.log(data)
-        await axios.post('http://localhost:8080/api/auth/login',data).then((res)=>{
+        await axios.post('/api/auth/login',data).then((res)=>{
             console.log(res.data)
             if(res.data.success){
                 setUser(res.data.user);
@@ -48,7 +48,7 @@ export const Login = () => {
         e.preventDefault()
         const data = {name:e.target.name.value,email:e.target.email.value,password:e.target.password.value,phone:e.target.phone.value,address:e.target.address.value}
         console.log(data)
-        await axios.post('http://localhost:8080/api/v1/auth/register',data).then((res)=>{
+        await axios.post('/api/auth/register',data).then((res)=>{
             console.log(res.data)
             if(res.data.success===true){
                 setRegisterForm(false)
