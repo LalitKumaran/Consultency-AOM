@@ -2,9 +2,9 @@ import {useState,useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import login_styles from './login.module.css'
 import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+toast.configure();
 export const Login = () => {
 
     const navigate = useNavigate()
