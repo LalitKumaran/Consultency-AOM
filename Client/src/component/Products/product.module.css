@@ -82,6 +82,7 @@ html {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 1.5rem;
+  grid-template-rows: repeat(auto-fit,2fr);
   /* padding: 4rem 0; */
 }
 .category{
@@ -108,13 +109,18 @@ html {
   padding: 3rem 9%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  /* grid-template-rows: repeat(auto-fit,1fr); */
   gap: 1.5rem;
+  
 }
 .products .boxcontainer .box {
   position: relative;
   background: #f3f3f3;
   text-align: center;
   overflow: hidden;
+  width:500px;
+  height: 500px;
+  align-items: center;
 }
 .products .boxcontainer .box:hover .icons {
   top: 0;
