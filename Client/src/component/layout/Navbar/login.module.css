@@ -27,6 +27,11 @@ html {
     right: 2rem;
     transition: 0.4s linear;
   }
+  .logout
+  {
+    display: flex;
+    justify-content: flex-end;
+  }
   .userform
   {
     display: flex;

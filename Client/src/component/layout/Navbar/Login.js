@@ -93,7 +93,8 @@ export const Login = () => {
         </div>
         <p>{user.phone}</p>
         <p>{user.address}</p>
-        <button onClick={logout}> Logout </button>
+        <p className={login_styles.logout}>
+        <button onClick={logout}> Logout </button></p>
         </div> 
         
         : 
