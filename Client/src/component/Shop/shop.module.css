@@ -21,13 +21,15 @@ html {
     margin-top: 1rem;
     display: inline-block;
     padding: 0.8rem 3rem;
-    background: #bac34e;
-    color: #fff;
+    background: #ffd700;
+    color: black;
     font-size: 1.7rem;
     cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   }
   .btn:hover {
     background: #222;
+    color: white;
   }
 
   .title {
@@ -41,7 +43,7 @@ html {
     color: #222;
   }
   .title span {
-    color: #bac34e;
+    color: #ffd700;
     padding-left: 0.7rem;
   }
   .title a {
@@ -50,7 +52,7 @@ html {
     font-size: 1.5rem;
   }
   .title a:hover {
-    color: #bac34e;
+    color: #ffd700;
   }
 
 .category .boxcontainer {
@@ -82,7 +84,7 @@ html {
     border-radius: 4px;
 }
 .category .boxcontainer .box .qtybtn:hover{
-    background-color: #bac34e;
+    background-color: #ffd700;
 }
 .category .boxcontainer .box img {
   height: 15rem;
@@ -94,7 +96,7 @@ html {
   color: #666;
 }
 .category .boxcontainer .box:hover h3 {
-  color: #bac34e;
+  color: #ffd700;
 }
 .shop{
   padding: 3rem 9%;
@@ -136,7 +138,7 @@ html {
   color: #666;
 }
 .shop .boxcontainer .box .icons a:hover {
-  background: #bac34e;
+  background: #ffd700;
   color: #fff;
 }
 .shop .boxcontainer .box .image {
@@ -165,5 +167,5 @@ html {
 .shop .box
 container .box .content .stars i {
   font-size: 1.7rem;
-  color: #bac34e;
+  color: #ffd700;
 }

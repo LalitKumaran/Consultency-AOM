@@ -35,11 +35,11 @@ export const Shop = () => {
     }
 
     const wholesale = () => {
-        setState({"wholesale":!state.wholesale,"retail":false})
+        // setState({"wholesale":!state.wholesale,"retail":false})
     }
 
     const retail = () => {
-        setState({"wholesale":false,"retail":!state.retail})
+        // setState({"wholesale":false,"retail":!state.retail})
 
     }
 
