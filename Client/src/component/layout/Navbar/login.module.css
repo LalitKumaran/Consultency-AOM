@@ -27,6 +27,25 @@ html {
     right: 2rem;
     transition: 0.4s linear;
   }
+  .logout
+  {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .userform
+  {
+    display: flex;
+    margin-left: 2px;
+    /* margin-right: 3px; */
+    margin-top: 2px;
+    /* margin-bottom: 3px; */
+
+  }
+  /* .userfornt
+  {
+    height: 100px;
+    width: 100px;
+  } */
   .loginform h3 {
     color: #222;
     text-transform: uppercase;
