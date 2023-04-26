@@ -62,4 +62,21 @@ const getProduct = async (req,res) => {
     
 }
 
+const allProducts = async (req,res) => {
+    
+   try{
+    const products = await productModel.find()
+    res.status(201).send({
+        success : true,
+        message : "All Products",
+        products,
+    })
+   } 
+   catch(error){
+    res.status(500).send({
+        success : false,
+        message : "Error getting products"
+    })
+   }
+} 
 module.exports = {addProduct,getProduct};

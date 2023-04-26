@@ -5,40 +5,39 @@ import navbar_styles from './navbar.module.css'
 import {FaBars,FaSearch,FaShoppingCart,FaUser} from 'react-icons/fa'
 import {BsDroplet} from 'react-icons/bs'
 import {Login} from './Login'
+import {Cart} from './Cart/Cart'
 
 export function NavBar(){
 
     const [searchForm,setSearchForm] = useState({"toggle":false,"disp":"none"});
+    const [cart,setCart] = useState({"toggle":false,"disp":"none"});
+    const [loginForm,setLoginForm] = useState({"toggle":false,"disp":"none"});
 
     const searchFormActivate = () => {
       setLoginForm({"toggle":false,"disp":"none"})
+      setCart({"toggle":false,"disp":"none"})
       if(searchForm.toggle===true){
         setSearchForm({"toggle":false,"disp":"none"})
       }
       else{
         setSearchForm({"toggle":true,"disp":""})
       }
-
-      
     }
 
-    // const [cart,setCart] = useState(false);
-
-    // const cartActivate = () => {
-    //   console.log("working")
-    //   if(searchForm === true){
-    //     setSearchForm(false)
-    //   }
-    //   if(loginForm === true){
-    //     setLoginForm(false)
-    //   }
-    //   setCart(!cart)
-    // }
-
-    const [loginForm,setLoginForm] = useState({"toggle":false,"disp":"none"});
+    const cartActivate = () => {
+      setLoginForm({"toggle":false,"disp":"none"})
+      setSearchForm({"toggle":false,"disp":"none"})
+      if(cart.toggle === true){
+        setCart({"toggle":false,"disp":"none"})
+      }
+      else{
+        setCart({"toggle":true,"disp":""})
+      }
+    }
 
     const loginFormActivate = () => {
       setSearchForm({"toggle":false,"disp":"none"})
+      setCart({"toggle":false,"disp":"none"})
       if(loginForm.toggle===true){
         setLoginForm({"toggle":false,"disp":"none"})
       }
@@ -49,9 +48,9 @@ export function NavBar(){
 
 
     const onScroll = (e) => {
-      setSearchForm(!searchForm)
-      setSearchForm(!loginForm)
-      // setSearchForm(!cart)
+      setSearchForm({"toggle":false,"disp":"none"})
+      setLoginForm({"toggle":false,"disp":"none"})
+      setCart({"toggle":false,"disp":"none"})
     }
   
     useEffect(() => {
@@ -65,7 +64,7 @@ export function NavBar(){
 
         <nav className={navbar_styles.navbar}>
             <NavLink to='/'>Home</NavLink>
-            <NavLink to='/shop'>Products</NavLink>
+            <NavLink to='/products'>Products</NavLink>
             <NavLink to='/shop'>Shop</NavLink>
             <NavLink to='/shop'>Gallery</NavLink>
             <NavLink to='/about'>About</NavLink>
@@ -75,7 +74,7 @@ export function NavBar(){
         <div>
             <FaBars className={navbar_styles.menu}/>
             <FaSearch className={navbar_styles.icons} onClick={searchFormActivate}/>
-            <FaShoppingCart className={navbar_styles.icons}/>
+            <FaShoppingCart className={navbar_styles.icons} onClick={cartActivate}/>
             <FaUser className={navbar_styles.icons} onClick={loginFormActivate}/>
         </div>
 
@@ -85,8 +84,11 @@ export function NavBar(){
   <input type="search" placeholder="Search here..."/>
   <label><FaSearch/></label>
   </form> :
-   (loginForm.toggle === true ? <Login style={{display:loginForm.disp}}/> : <></>
-      )}
+   (loginForm.toggle === true ? <Login style={{display:loginForm.disp}}/> : 
+       
+   (cart.toggle === true ? <Cart style={{display:cart.disp}}/> : <></>)
+   
+   )}
     </div>
     </>
     )
