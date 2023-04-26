@@ -22,7 +22,7 @@ export const Login = () => {
                 setUser(res.data.user);
                 sessionStorage.setItem('user',JSON.stringify(res.data.user))
             }
-            toastify.success(res.data.message)
+            toast.success(res.data.message)
         }).catch((err)=>{console.log(err)})
     }
 
