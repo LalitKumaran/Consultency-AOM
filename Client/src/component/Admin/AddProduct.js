@@ -1,5 +1,6 @@
 import axios from 'axios'
-import {Form,Button} from 'react-bootstrap'
+import addproduct_styles from './addproduct.module.css'
+import {Form,Button,Container} from 'react-bootstrap'
 
 export const AddProduct = () => {
 
@@ -12,7 +13,8 @@ export const AddProduct = () => {
         }).catch((err)=>{console.log(err)})
     }
     return (
-        <Form onSubmit={add} Style="margin-top:100px">
+        <Container className={addproduct_styles.container}>
+        <Form onSubmit={add} className={addproduct_styles.form}>
             <Form.Group>
             <Form.Label>Name</Form.Label>
             <Form.Control type="text"></Form.Control>
@@ -27,6 +29,7 @@ export const AddProduct = () => {
             </Form.Group>
             <Button type="submit">Submit</Button>
         </Form>
+        </Container>
 
     )
 }
