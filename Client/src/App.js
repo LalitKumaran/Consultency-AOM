@@ -11,9 +11,12 @@ import {AddProduct} from './component/Admin/AddProduct'
 
 function App() {
   return (
-
+    
   <Router>
+    <header>
     <Header/>
+    </header>
+    <main>
     <Routes>
       <Route path='/' element={<Home/>}></Route>
       <Route path='/products' element={<Products/>}></Route> 
@@ -22,8 +25,10 @@ function App() {
       <Route path='/contact' element={<Contact/>}></Route> 
       <Route path="/admin/newproduct" element={<AddProduct/>}></Route>
     </Routes>
-
+    </main>
+    <footer>
     <Footer/>
+    </footer>
   </Router>
     
   );

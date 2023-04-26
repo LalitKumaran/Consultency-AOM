@@ -4,7 +4,7 @@ import {Form,Button} from 'react-bootstrap'
 export const AddProduct = () => {
 
     const add = async () => {
-        await axios.post('product/new',{}).then((res)=>{
+        await axios.post('/api/product/new',{}).then((res)=>{
             console.log(res.message)
             if(res.success){
                 alert(res.message)

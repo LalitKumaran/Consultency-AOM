@@ -51,7 +51,7 @@ const getProduct = async (req,res) => {
                 })
             } 
     }
-    catch(err){
+    catch(error){
         console.log(error)
         res.status(500).send({
             success:false,
@@ -63,9 +63,10 @@ const getProduct = async (req,res) => {
 }
 
 const allProducts = async (req,res) => {
-    
    try{
     const products = await productModel.find()
+    console.log(products)
+    
     res.status(201).send({
         success : true,
         message : "All Products",
@@ -79,4 +80,4 @@ const allProducts = async (req,res) => {
     })
    }
 } 
-module.exports = {addProduct,getProduct};
+module.exports = {addProduct,getProduct,allProducts};

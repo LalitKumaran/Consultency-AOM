@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    background: #bac34e;
+    color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: #222;
+  }
+
+  .title {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    padding: 1.2rem 0;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+    color: #222;
+  }
+  .title span {
+    color: #bac34e;
+    padding-left: 0.7rem;
+  }
+  .title a {
+    margin-left: auto;
+    color: #666;
+    font-size: 1.5rem;
+  }
+  .title a:hover {
+    color: #bac34e;
+  }
+
+.category .boxcontainer {
+  padding: 1rem 2%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+.category{
+  padding: 1rem 9%;
+}
+.category .boxcontainer .box {
+  text-align: center;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+.category .boxcontainer .box .qty{
+    padding: auto;
+
+}
+
+.category .boxcontainer .box .qty input{
+    text-align: center;
+    width: 20px;
+    border-radius: 2px;
+}
+.category .boxcontainer .box .qtybtn{
+    width: 20px;
+    border-radius: 4px;
+}
+.category .boxcontainer .box .qtybtn:hover{
+    background-color: #bac34e;
+}
+.category .boxcontainer .box img {
+  height: 15rem;
+  width : 15rem;
+}
+.category .boxcontainer .box h3 {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: #666;
+}
+.category .boxcontainer .box:hover h3 {
+  color: #bac34e;
+}
+.shop{
+  padding: 3rem 9%;
+}
+.shop .box-container {
+  padding: 3rem 9%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+.shop .boxcontainer .box {
+  position: relative;
+  background: #f3f3f3;
+  text-align: center;
+  overflow: hidden;
+}
+.shop .boxcontainer .box:hover .icons {
+  top: 0;
+}
+.shop .boxcontainer .box .icons {
+  position: absolute;
+  top: -105%;
+  left: 0;
+  height: 30rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(243, 243, 243, 0.8);
+  gap: 1rem;
+}
+.shop .boxcontainer .box .icons a {
+  font-size: 2rem;
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  color: #666;
+}
+.shop .boxcontainer .box .icons a:hover {
+  background: #bac34e;
+  color: #fff;
+}
+.shop .boxcontainer .box .image {
+  height: 30rem;
+  width: 100%;
+  overflow: hidden;
+}
+.shop .boxcontainer .box .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.shop .boxcontainer .box .content {
+  padding: 1.5rem;
+}
+.shop .box-container .box .content h3 {
+  font-size: 2rem;
+  color: #222;
+}
+.shop .boxcontainer .box .content .price {
+  font-size: 2rem;
+  color: #222;
+  padding: 1rem 0;
+}
+.shop .box
+container .box .content .stars i {
+  font-size: 1.7rem;
+  color: #bac34e;
+}

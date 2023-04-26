@@ -103,6 +103,7 @@ html {
 }
 .products{
   padding: 3rem 9%;
+  border: 1px solid black;
 }
 .products .box-container {
   padding: 3rem 9%;
