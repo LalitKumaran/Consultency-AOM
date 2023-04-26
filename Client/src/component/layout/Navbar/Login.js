@@ -5,7 +5,7 @@ import axios from 'axios'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export const Login = () => {
-toast.configure();
+// toast.configure();
     const navigate = useNavigate()
     const [user,setUser] = useState(JSON.parse(sessionStorage.getItem('user')))
 

@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
 import './App.css';
+import {ToastProvider} from 'react-toastify'
 import {Header} from './component/layout/Header/Header'
 import {Footer} from './component/layout/Footer/Footer'
 import {Home} from './component/Home/Home'
@@ -13,7 +14,9 @@ function App() {
   return (
 
   <Router>
+    <ToastProvider>
     <Header/>
+    
     <Routes>
       <Route path='/' element={<Home/>}></Route>
       <Route path='/products' element={<Products/>}></Route> 
@@ -24,6 +27,7 @@ function App() {
     </Routes>
 
     <Footer/>
+    </ToastProvider>
   </Router>
     
   );
