@@ -11,33 +11,35 @@ export const Shop = () => {
 
     // const [state,setState] =useState({"wholesale":false,"retail":false})
 
-    const [quantity,setQuantity] = useState({})
+    // const [quantity,setQuantity] = useState({})
 
     const load = async() => {
         await axios.get('api/product/all').then((res)=>{
             setProducts(res.data.products)
-            var quant = {};
-            res.data.products.map((p,index)=>(
-                quant[p._id] = 1
-            ))
-            setQuantity(quant)
+            setFilter(res.data.products)
+            // var quant = {};
+            // res.data.products.map((p,index)=>(
+            //     quant[p._id] = 1
+            // ))
+            // setQuantity(quant)
         }).catch((err)=>{console.log(err)})
     }
 
-    const incqty = (id) => {
-        const newQuant = [...quantity];
-        newQuant[id] += 1;
-        setQuantity(newQuant);
-    }
+    // const incqty = (id) => {
+    //     const newQuant = [...quantity];
+    //     newQuant[id] += 1;
+    //     setQuantity(newQuant);
+    // }
 
-    const decqty = (id) => {
-        const newQuant = [...quantity];
-        newQuant[id] -= 1;
-        setQuantity(newQuant);
-    }
+    // const decqty = (id) => {
+    //     const newQuant = [...quantity];
+    //     newQuant[id] -= 1;
+    //     setQuantity(newQuant);
+    // }
 
     useEffect( ()=>{
         load()
+        console.log(products)
     },[])
 
     return (
@@ -53,19 +55,21 @@ export const Shop = () => {
         </Container>
 
         <Container className={shop_styles.boxcontainer}>
-        <Card className={shop_styles.box}>
-        <Card.Title><h3>Name</h3></Card.Title><br/>
-        <Card.Body>
-            <img src='#' ></img>
-            <h3>Price</h3>
-            <h3 className={shop_styles.qty}>
-            <Button onClick={incqty(1)} className={shop_styles.qtybtn}>-</Button>
-            <input type="text" min='0' defaultValue="1"></input>
-            <Button onClick={decqty(1)} className={shop_styles.qtybtn}>+</Button>
-            </h3>
-            <Button className={shop_styles.btn}>Add to Cart</Button>
-        </Card.Body>
-        </Card>
+            {filter.map((p,index)=>{
+                <Card key={index} className={shop_styles.box}>
+                <Card.Title><h3>{p.name}</h3></Card.Title><br/>
+                <Card.Body>
+                    <img src='#' ></img>
+                    <h3>{p.price}/Litre</h3>
+                    <h3 className={shop_styles.qty}>
+                    <Button className={shop_styles.qtybtn}>-</Button>
+                    <input type="text" min='0' defaultValue="1"></input>
+                    <Button className={shop_styles.qtybtn}>+</Button>
+                    </h3>
+                    <Button className={shop_styles.btn}>Add to Cart</Button>
+                </Card.Body>
+                </Card>
+            })}
         </Container>
         </Container>
         </>
