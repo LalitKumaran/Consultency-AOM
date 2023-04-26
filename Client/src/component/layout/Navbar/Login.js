@@ -4,7 +4,7 @@ import login_styles from './login.module.css'
 import axios from 'axios'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {FaRegUserCircle} from 'react-icons'
+import {FaRegUserCircle} from 'react-icons/fa'
 export const Login = () => {
 // toast.configure();
     const navigate = useNavigate()
