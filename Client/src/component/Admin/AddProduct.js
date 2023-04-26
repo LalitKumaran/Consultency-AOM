@@ -13,6 +13,7 @@ export const AddProduct = () => {
         const reader = new FileReader();
         reader.readAsDataURL(imageFile);
         reader.onloadend = async () => {
+            console.log(reader.result.split(',')[1])
         await axios.post('/api/product/new', {
           name: formData.get('name'),
           price: formData.get('price'),

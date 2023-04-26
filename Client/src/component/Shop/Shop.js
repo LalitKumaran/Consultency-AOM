@@ -11,51 +11,45 @@ export const Shop = () => {
 
     const [state,setState] =useState({"wholesale":false,"retail":false})
 
-    const [quantity,setQuantity] = useState([])
+    const [quantity,setQuantity] = useState({})
 
     const load = async() => {
         await axios.get('api/product/all').then((res)=>{
             setProducts(res.data.products)
-            var quant = [];
-            var obj;
+            var quant = {};
             res.data.products.map((p,index)=>(
-                obj = {p_id:0},
-                quant.push(obj)
+                quant[p._id] = 1
             ))
             setQuantity(quant)
         }).catch((err)=>{console.log(err)})
     }
 
     const incqty = (id) => {
-        
+        const newQuant = [...quantity];
+        newQuant[id] += 1;
+        setQuantity(newQuant);
     }
 
     const decqty = (id) => {
-        
-    }
-
-    const wholesale = () => {
-        // setState({"wholesale":!state.wholesale,"retail":false})
-    }
-
-    const retail = () => {
-        // setState({"wholesale":false,"retail":!state.retail})
-
+        const newQuant = [...quantity];
+        newQuant[id] -= 1;
+        setQuantity(newQuant);
     }
 
     useEffect( ()=>{
         load()
-    })
+    },[])
 
     return (
         <>
+        <Button onClick={load} className={shop_styles.btn}>Click</Button>
         <Container className={shop_styles.category}>
         <Container className={shop_styles.boxcontainer}>
         <h1 className={shop_styles.title}> Our <span>Products</span> <a href="#"></a> </h1>
         </Container>
         <Container className={shop_styles.boxcontainer}>
-        <Button onClick={wholesale()} className={shop_styles.btn}>WholeSale</Button>
-        <Button onClick={retail()} className={shop_styles.btn}>Retail</Button>
+        <Button className={shop_styles.btn}>WholeSale</Button>
+        <Button className={shop_styles.btn}>Retail</Button>
         </Container>
 
         <Container className={shop_styles.boxcontainer}>
