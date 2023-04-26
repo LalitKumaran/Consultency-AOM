@@ -20,15 +20,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 9%;
+    padding: 0.5rem 6%;
   }
   .logo {
-    font-size: 2.7rem;
-    font-weight: bolder;
+    /* font-size: 2.7rem;
+    font-weight: bolder; */
     color: #222;
     text-decoration: none;
+    height: 80px;
+    width : 200px
   }
-  .logo i {
+  .logo img {
     color: #bac34e;
     padding-right: 0.5rem;
   }
@@ -37,6 +39,7 @@
     color: #666;
     margin: 0 1rem;
     text-decoration: none;
+    align-items: baseline;
   }
   .navbar a:hover {
     color: #bac34e;

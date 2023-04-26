@@ -1,14 +1,16 @@
 import {useState,useEffect} from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink , useNavigate} from "react-router-dom";
 import navbar_styles from './navbar.module.css'
 // import {Navbar,Nav,Form} from 'react-bootstrap'
 import {FaBars,FaSearch,FaShoppingCart,FaUser} from 'react-icons/fa'
 import {BsDroplet} from 'react-icons/bs'
+import logo from '../../../images/logo1.png'
 import {Login} from './Login'
 import {Cart} from './Cart/Cart'
 
 export function NavBar(){
 
+    const navigate = useNavigate()
     const [searchForm,setSearchForm] = useState({"toggle":false,"disp":"none"});
     const [cart,setCart] = useState({"toggle":false,"disp":"none"});
     const [loginForm,setLoginForm] = useState({"toggle":false,"disp":"none"});
@@ -52,6 +54,10 @@ export function NavBar(){
       setLoginForm({"toggle":false,"disp":"none"})
       setCart({"toggle":false,"disp":"none"})
     }
+
+    const logonav = () => {
+        navigate('/')
+    }
   
     useEffect(() => {
       window.addEventListener('scroll', onScroll);
@@ -60,13 +66,13 @@ export function NavBar(){
     return (
       <>
       <div className={navbar_styles.maincontainer}>
-        <a href="#" className={navbar_styles.logo}> <i><BsDroplet/></i> ARUNA OIL </a>
+        <div onClick={logonav}><img className={navbar_styles.logo} src={logo} alt='logo'/></div>
 
         <nav className={navbar_styles.navbar}>
             <NavLink to='/'>Home</NavLink>
             <NavLink to='/products'>Products</NavLink>
             <NavLink to='/shop'>Shop</NavLink>
-            <NavLink to='/shop'>Gallery</NavLink>
+            {/* <NavLink to='/shop'>Gallery</NavLink> */}
             <NavLink to='/about'>About</NavLink>
             <NavLink to='/contact'>Contact</NavLink>
         </nav>

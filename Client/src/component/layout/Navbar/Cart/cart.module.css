@@ -28,7 +28,7 @@ html {
   background: #222;
 }
 
- .shopping-cart {
+ .shopping_cart {
   position: absolute;
   top: 115%;
   right: -105%;
@@ -37,19 +37,17 @@ html {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   width: 35rem;
   padding: 2rem;
-}
- .shopping-cart.active {
   right: 2rem;
   transition: 0.4s linear;
 }
- .shopping-cart .box {
+ .shopping_cart .box {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
   position: relative;
 }
- .shopping-cart .box .fa-times {
+ .shopping_cart .box .fatimes {
   position: absolute;
   top: 50%;
   right: 2rem;
@@ -58,33 +56,33 @@ html {
   color: #666;
   cursor: pointer;
 }
- .shopping-cart .box .fa-times:hover {
+ .shopping_cart .box .fatimes:hover {
   color: #bac34e;
 }
- .shopping-cart .box img {
+ .shopping_cart .box img {
   height: 10rem;
 }
- .shopping-cart .box .content h3 {
+ .shopping_cart .box .content h3 {
   font-size: 1.7rem;
   padding-bottom: 0.5rem;
   color: #222;
 }
- .shopping-cart .box .content span {
+ .shopping_cart .box .content span {
   font-size: 1.5rem;
   color: #666;
 }
- .shopping-cart .box .content span.multiply {
+ .shopping_cart .box .content span.multiply {
   margin: 0 0.5rem;
 }
- .shopping-cart .total {
+ .shopping_cart .total {
   color: #666;
   text-align: center;
   font-size: 2.2rem;
 }
- .shopping-cart .total span {
+ .shopping_cart .total span {
   color: #222;
 }
- .shopping-cart .btn {
+ .shopping_cart .btn {
   text-align: center;
   width: 100%;
 }
