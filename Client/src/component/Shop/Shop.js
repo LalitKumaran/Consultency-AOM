@@ -37,12 +37,12 @@ export const Shop = () => {
     }
 
     useEffect( ()=>{
-        load()
+        // load()
     },[])
 
     return (
         <>
-        <Button onClick={load} className={shop_styles.btn}>Click</Button>
+        {/* <Button onClick={load} className={shop_styles.btn}>Click</Button> */}
         <Container className={shop_styles.category}>
         <Container className={shop_styles.boxcontainer}>
         <h1 className={shop_styles.title}> Our <span>Products</span> <a href="#"></a> </h1>
