@@ -64,6 +64,7 @@ html {
     gap: 1.5rem;
   }
   .about .image {
+    
     flex: 1 1 40rem;
   }
   .about .image img {
@@ -89,12 +90,14 @@ html {
     padding: 1rem 0;
   }
   .gallery{
-    padding: 0 9%;
+    padding: 3rem 9%;
   }
   .gallery .boxcontainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    
     gap: 1.5rem;
+    justify-items: flex-start;
   }
   .gallery .boxcontainer .box {
     height: 25rem;

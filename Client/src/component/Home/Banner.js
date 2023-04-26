@@ -14,7 +14,7 @@ export const Banner = () => {
 </div>
 
 <div className={banner_styles.banner}>
-    <img src="/assets/image/pnggwing.com.png" alt=""/>
+    <img src="/assets/image/ppp.png" alt=""/>
     <div className={banner_styles.content}>
         <span>limited sales</span>
         <h3>upto 50% off</h3>
