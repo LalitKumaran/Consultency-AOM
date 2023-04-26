@@ -40,7 +40,7 @@ export const Login = () => {
             setRegisterForm(!registerForm)
         }
         else{
-            alert("Session Exists") hjgh
+            alert("Session Exists")
         } 
     }
 
