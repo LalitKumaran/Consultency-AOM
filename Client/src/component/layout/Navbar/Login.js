@@ -14,7 +14,7 @@ export const Login = () => {
         e.preventDefault()
         const data = {email:e.target.email.value,password:e.target.password.value}
         console.log(data)
-        await axios.post('http://localhost:8080/api/v1/auth/login',data).then((res)=>{
+        await axios.post('http://localhost:8080/api/auth/login',data).then((res)=>{
             console.log(res.data)
             if(res.data.success){
                 setUser(res.data.user);

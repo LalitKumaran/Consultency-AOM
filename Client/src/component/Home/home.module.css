@@ -34,25 +34,39 @@ html {
     background-size: cover;
     background-position: center;
     position: relative;
+    /* height: 750px; */
+    width:100%;
+    /* position: absolute; */
     
   }
   .home .slidescontainer .slide {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: ; */
     gap: 1.5rem;
+    padding-top:7%;
+    padding-left: 10%;
+    /* position: absolute; */
+    
+    /* height:400px; */
     /* display: none; */
   }
   .home .slidescontainer .slide.active {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 400px;
   }
   .home .slidescontainer .slide .content {
     flex: 1 1 40rem;
+    /* flex-wrap:wrap; */
+    align-items: center;
     animation: fadeLeft 0.4s linear 0.4s backwards;
   }
   .home .slidescontainer .slide .content span {
     color: #666;
     font-size: 2.5rem;
+    align-items: center;
   }
   .home .slidescontainer .slide .content h3 {
     font-size: 6rem;
@@ -62,9 +76,14 @@ html {
   .home .slidescontainer .slide .image {
     flex: 1 1 40rem;
     margin: 3rem 0;
+    min-height: 400px;
+    max-height: 400px;
+    /* position: fixed; */
+    /* flex-wrap: wrap; */
   }
   .home .slidescontainer .slide .image img {
-    width: 100%;
+    width: auto;
+    height:400px;
     animation: fadeUp 0.4s linear;
   }
   .home .nextslide,
@@ -72,8 +91,10 @@ html {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    height: 5rem;
-    width: 5rem;
+    /* height: 5rem; */
+    /* width: 5rem;
+     */
+     
     line-height: 5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -81,6 +102,9 @@ html {
     font-size: 3rem;
     color: #222;
     cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+
   }
   .home .nextslide:hover,
   .home .prevslide:hover {
