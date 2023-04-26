@@ -1,14 +1,24 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useState,useRef} from 'react'
 import home_styles from './home.module.css'
 // import {} from 'react-bootstrap'
 import {Banner} from './Banner'
+import {Products} from '../Products/Products'
 import {FaArrowRight,FaArrowLeft} from 'react-icons/fa'
 // import { Carousel } from 'react-responsive-carousel';
 export function Home(){
+
+    const [products] = useRef(null)
     const [carouselList,setCarouselList] = useState([{'tag1':"fresh and organic",'tag2':"upto 50% off","img":"assets/image/pngeggg (8).png"},
     {'tag1':"fresh and organic",'tag2':"upto 50% off","img":"assets/image/pngegg (8).png"},
     {'tag1':"fresh and organic",'tag2':"upto 50% off","img":"assets/image/pngegg (9).png"}])
 
+    const scrollToPrducts = (elementRef) => {
+        window.scrollTo({
+            top : elementRef.current.offsetTop,
+            behavior:'smooth'
+        });
+    }
+    
     const [activeCarousel,setActiveCarousel] = useState(0) 
     const next = () => {
         setActiveCarousel((activeCarousel + 1) % carouselList.length);
@@ -60,7 +70,7 @@ export function Home(){
         {/* <FaArrowRight  className={home_styles.nextslide} onClick={next} /> */}
         {/* <FaArrowLeft className={home_styles.prevslide} onClick={prev}/> */}
         </div>
-        <Banner/>
+        <Products ref={products}/>
     </>
     )
 }

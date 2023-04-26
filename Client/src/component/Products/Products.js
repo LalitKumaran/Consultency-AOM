@@ -1,6 +1,7 @@
 import product_styles from './product.module.css'
 import {useEffect,useState} from "react"
 import axios from 'axios'
+import {Card} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 import {FaStar,FaShoppingCart,FaEye,FaHeart} from 'react-icons/fa'
 
@@ -20,31 +21,51 @@ export const Products = () => {
 
 return (
     <>
-    {/* <div className={product_styles.heading}>
-    <h1>our shop</h1>
-    <p><NavLink to='/'>Home</NavLink> shop </p>
-    </div> */}
+    <div className={product_styles.category}>
+        <h1 className={product_styles.title}> our <span>category</span> <a href="#"></a> </h1>
 
-        <div className={product_styles.category}>
+        <div className={product_styles.boxcontainer}>
 
-            <h1 className={product_styles.title}> our <span>category</span> <a href="#"></a> </h1>
+            <a href="#" className={product_styles.box}>
+            <img src="assets/image/pngegg 0(8).png" alt=""/>
+            <h3>wholeSale</h3>
+            </a>
 
-            <div className={product_styles.boxcontainer}>
-
-                <a href="#" className={product_styles.box}>
-                    <img src="assets/image/pngegg 0(8).png" alt=""/>
-                    <h3>wholeSale</h3>
-                </a>
-
-                <a href="#" className={product_styles.box}>
-                    <img src="assets/image/pngegg (8).png" alt=""/>
-                    <h3>Retail</h3>
-                </a>
-            </div>
-
+            <a href="#" className={product_styles.box}>
+                <img src="assets/image/pngegg (8).png" alt=""/>
+                <h3>Retail</h3>
+            </a>
         </div>
-
-<div className={product_styles.products}>
+    </div>
+        <div className={product_styles.product}>
+        <h1 className={product_styles.title}> our <span>Products</span> <a href="#"></a> </h1>
+        <Card className={product_styles.boxcontainer}>
+            <div className={product_styles.image}>
+                <img src="/assets/image/pngegg (8).png" alt=""/>
+            </div>
+            <div className={product_styles.content}>
+                {/* <span>welcome to our shop</span> */}
+                <h3>fresh and organic groceries</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vel sequi nostrum quae nobis non quaerat nisi voluptatibus recusandae reprehenderit tempore eligendi, eum quibusdam perferendis dicta, incidunt dolores nemo ex.</p>
+                {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem cumque molestiae blanditiis deleniti aspernatur, ab tempora quisquam sapiente commodi hic.</p> */}
+                <a href="#" className={product_styles.btn}>read more</a>
+            </div>
+        </Card>
+        <Card className={product_styles.boxcontainer}>
+            <div className={product_styles.content}>
+                {/* <span>welcome to our shop</span> */}
+                <h3>fresh and organic groceries</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vel sequi nostrum quae nobis non quaerat nisi voluptatibus recusandae reprehenderit tempore eligendi, eum quibusdam perferendis dicta, incidunt dolores nemo ex.</p>
+                {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem cumque molestiae blanditiis deleniti aspernatur, ab tempora quisquam sapiente commodi hic.</p> */}
+                <a href="#" className={product_styles.btn}>read more</a>
+            </div>
+            <div className={product_styles.image}>
+                <img src="/assets/image/pngegg (8).png" alt=""/>
+            </div>
+        </Card>
+        </div>
+        
+{/* <div className={product_styles.products}>
 
     <h1 className={product_styles.title}> our <span>products</span> <a href="#"></a> </h1>
 
@@ -119,7 +140,7 @@ return (
         </div>
 
     </div>
-    </div>
+    </div> */}
     </>
 )
 }
