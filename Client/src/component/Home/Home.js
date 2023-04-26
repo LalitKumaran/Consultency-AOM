@@ -44,30 +44,6 @@ export function Home(){
         <div className={home_styles.home}>
 
         <div className={home_styles.slidescontainer}>
-            {/* {carouselList.map((l,index) => {
-            activeCarousel === index ?
-            <div className={home_styles.slide} active>
-                <div className={home_styles.content}>
-                    <span>{l.tag1}</span>
-                    <h3>{l.tag2}</h3>
-                    <a href="#" className={home_styles.btn}>shop now</a>
-                </div>
-                <div className={home_styles.image}>
-                    <img src={l.img} alt=""/>
-                </div>
-            </div> : <></>
-            })} */}
-            {/* <div className={home_styles.slide} style={{display:"none"}}>
-                <div className={home_styles.content}>
-                    <span>fresh and organic</span>
-                    <h3>upto 50% off</h3>
-                    <a href="#" className={home_styles.btn}>shop now</a>
-                </div>
-                <div className={home_styles.image}>
-                    <img src="assets/image/pngegg (8).png" alt=""/>
-                </div>
-            </div> */}
-
             <div className={home_styles.slide}>
                 <div className={home_styles.content}>
                     <span>{carouselList[a].tag1}</span>

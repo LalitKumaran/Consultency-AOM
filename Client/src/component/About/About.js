@@ -1,16 +1,17 @@
 import about_styles from './about.module.css'
 import {NavLink} from 'react-router-dom'
+import {Container} from 'react-bootstrap'
 import {FaEye,FaHeart,FaShareAlt} from 'react-icons/fa'
 
 export const About = () => {
     return (
         <>
-        <div className={about_styles.heading}>
-    <h1>about us</h1>
-    <p> <NavLink to="/">home </NavLink> about </p>
-</div>
+        
+    <div className={about_styles.about}>
+    <h1 className={about_styles.title}> our <span>Shop</span> </h1>
+    
 
-<div className={about_styles.about}>
+    <div className={about_styles.boxcontainer}>
 
     <div className={about_styles.image}>
         <img src="/assets/image/pngegg (8).png" alt=""/>
@@ -20,15 +21,15 @@ export const About = () => {
         <span>welcome to our shop</span>
         <h3>fresh and organic groceries</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vel sequi nostrum quae nobis non quaerat nisi voluptatibus recusandae reprehenderit tempore eligendi, eum quibusdam perferendis dicta, incidunt dolores nemo ex.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem cumque molestiae blanditiis deleniti aspernatur, ab tempora quisquam sapiente commodi hic.</p>
+        {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem cumque molestiae blanditiis deleniti aspernatur, ab tempora quisquam sapiente commodi hic.</p> */}
         <a href="#" className={about_styles.btn}>read more</a>
     </div>
-
+    </div>
 </div>
 
 <div className={about_styles.gallery}>
 
-    <h1 className={about_styles.title}> our <span>gallery</span> <a href="#">view all >></a> </h1>
+    <h1 className={about_styles.title}> our <span>gallery</span> <a href="#">view all </a> </h1>
 
     <div className={about_styles.boxcontainer}>
 

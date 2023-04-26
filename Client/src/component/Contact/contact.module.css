@@ -44,6 +44,7 @@ html {
   color: #bac34e;
 }
 
+
 .title {
   display: flex;
   align-items: center;
@@ -78,6 +79,15 @@ html {
 .btn:hover {
   background: #222;
 }
+
+
+.boxcontainer {
+  padding: 1rem 2%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
 .contact{
     padding: 3rem 9%;
 }

@@ -34,9 +34,7 @@ html {
     background-size: cover;
     background-position: center;
     position: relative;
-    /* height: 750px; */
     width:100%;
-    /* position: absolute; */
     
   }
   .home .slidescontainer .slide {
@@ -44,8 +42,8 @@ html {
     align-items: center;
     /* flex-wrap: ; */
     gap: 1.5rem;
-    padding-top:7%;
-    padding-left: 10%;
+    padding-top:2%;
+    padding-left: 2%;
     /* position: absolute; */
     
     /* height:400px; */
