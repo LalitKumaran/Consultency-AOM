@@ -2,6 +2,8 @@ import {useState,useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import login_styles from './login.module.css'
 import axios from 'axios'
+import { ToastContainer, toastify } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Login = () => {
 
@@ -14,13 +16,13 @@ export const Login = () => {
         e.preventDefault()
         const data = {email:e.target.email.value,password:e.target.password.value}
         console.log(data)
-        await axios.post('http://localhost:8080/api/v1/auth/login',data).then((res)=>{
+        await axios.post('/api/auth/login',data).then((res)=>{
             console.log(res.data)
             if(res.data.success){
                 setUser(res.data.user);
                 sessionStorage.setItem('user',JSON.stringify(res.data.user))
             }
-            alert(res.data.message)
+            toastify.success(res.data.message)
         }).catch((err)=>{console.log(err)})
     }
 
@@ -40,7 +42,7 @@ export const Login = () => {
             setRegisterForm(!registerForm)
         }
         else{
-            alert("Session Exists") 
+            toastify("Session Exists")
         } 
     }
 
@@ -48,7 +50,7 @@ export const Login = () => {
         e.preventDefault()
         const data = {name:e.target.name.value,email:e.target.email.value,password:e.target.password.value,phone:e.target.phone.value,address:e.target.address.value}
         console.log(data)
-        await axios.post('http://localhost:8080/api/v1/auth/register',data).then((res)=>{
+        await axios.post('/api/auth/register',data).then((res)=>{
             console.log(res.data)
             if(res.data.success===true){
                 setRegisterForm(false)
@@ -57,7 +59,7 @@ export const Login = () => {
                     sessionStorage.setItem('user',JSON.stringify(res.data.user))
                 }
             }
-            alert(res.data.message)
+            toast(res.data.message)
         }).catch((err)=>{console.log(err)})
     }
 
