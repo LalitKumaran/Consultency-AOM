@@ -33,7 +33,7 @@ const productRoutes = require('./routes/productRoute.js')
 app.use('/api/product',productRoutes)
 
 const cartRoutes = require('./routes/cartRoute.js')
-app.use('/api/cart',productRoutes)
+app.use('/api/cart',cartRoutes)
 
 
 app.use(express.static(path.join(__dirname, '../Client/build')));

@@ -67,7 +67,7 @@ const allProducts = async (req,res) => {
     const products = await productModel.find()
     console.log(products)
     
-    res.status(201).send({
+    res.status(200).send({
         success : true,
         message : "All Products",
         products,
