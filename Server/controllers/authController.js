@@ -33,7 +33,7 @@ const registerController = async (req,res) => {
 
         const user = await new userModel({name,email:email.toLowerCase(),phone,address,password:hashedPassword}).save()
 
-        const cart = await new cartModel({user:user._id}).save()
+        const cart = await new cartModel({user:user._id},{products:[]}).save()
         
         const token = await JWT.sign({user_id:user._id,email},process.env.JWT_SECRET,{
             expiresIn: "2h",

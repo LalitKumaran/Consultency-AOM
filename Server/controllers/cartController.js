@@ -6,12 +6,18 @@ const addItem = async(req,res) => {
     try{
     const {uid,pid} = req.body
 
-    const user = await userModel.findOne({_id:uid})
+    const user = await userModel.findOne({uid})
 
-    if(user){
-        const product = await productModel.findOne({_id:pid})
+    const usercart = await cartModel.findOne({user:uid})
+
+    if(!usercart){
+        await new cartModel({user:uid},{products:[]}).save()
+    }
+    
+    const product = await productModel.findOne({_id:pid})
+
         if(product){
-            const cart = await new cartModel({user:uid,products:product}).save()
+            const cart = await cartModel.updateOne({user:uid},{$addToSet:{products:product}},{upsert:true})
             res.status(201).send({
                 success:true,
                 message:"Added to cart",
@@ -25,13 +31,6 @@ const addItem = async(req,res) => {
                 message:"Product not found",
             })
         }
-    }
-    else{
-        res.status(404).send({
-            success:false,
-            message:"User not found",
-        })
-    }
 }
 catch(error){
     res.status(500).send({
@@ -44,15 +43,16 @@ catch(error){
 
 const getCart = async (req,res) => {
     try{
-    const uid = req.params.uid
-
-    const cart = await cartModel.findOne({uid})
-
-    if(cart){
+        console.log(req.body)
+    const uid = req.body.uid
+    console.log(uid)
+    const usercart = await cartModel.findOne({user:uid})
+    console.log(usercart)
+    if(usercart){
         res.status(200).send({
             success:true,
             message:"Cart found",
-            cart,
+            usercart,
         })
     }
     else{
@@ -61,6 +61,7 @@ const getCart = async (req,res) => {
             message:"Cart not exists",
         })
     }
+    
 }
 catch(error){
     res.status(500).send({
@@ -71,4 +72,38 @@ catch(error){
 }
 }
 
-module.exports = {addItem,getCart};
+const removeItem = async(req,res)=> {
+    try{
+        const {uid,pid}  = req.body
+
+        const usercart = await cartModel.findOne({user:uid})
+
+        if(usercart){
+            const products = usercart.products.filter(p => p._id.toString() !== pid);
+            await cartModel.updateOne({ user: uid }, { products });
+
+            const updatedCart = await cartModel.findOne({ user: uid });
+
+              res.status(200).send({
+                success:true,
+                message:"Product Removed from cart",
+                updatedCart
+              })
+        }
+        else{
+            res.status(304).send({
+                success:false,
+                message:"Cart not exists",
+            })
+        }
+
+    }
+    catch{
+        res.status(500).send({
+            success:false,
+            message:"Internal Error",
+            error
+        })
+    }
+}
+module.exports = {addItem,getCart,removeItem};

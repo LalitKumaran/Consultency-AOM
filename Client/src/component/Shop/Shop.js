@@ -10,7 +10,7 @@ export const Shop = () => {
 
     const [filter,setFilter] = useState([])
 
-    const [user,setUser] = useState(JSON.parse(sessionStorage.getItem('user')))
+    const [user,setUser] = useState(JSON.parse(localStorage.getItem('user')))
 
     // const [state,setState] =useState({"wholesale":false,"retail":false})
 
@@ -30,16 +30,16 @@ export const Shop = () => {
     }
 
     const addtocart = async(pid) => {
-        if(user){
-            await axios.post(`/api/cart/new/${user._id}/${pid}`,).then((res)=>{
+        if(!user){
+            toast.error("User not found")
+        }
+        else{
+            console.log(user.email,pid)
+            await axios.post('/api/cart/new',{uid:user.email,pid:pid}).then((res)=>{
                 console.log(res)
                 toast.success(res.data.message)
             }).catch((err)=>{console.log(err)})
-        }
-        else{
-            toast.danger("User not found")
-        }
-        
+        }     
     }
 
     // const incqty = (id) => {
@@ -77,16 +77,17 @@ export const Shop = () => {
         <Container className={shop_styles.boxcontainer}>
             {filter.map((p,index)=>
                 <Card key={index} className={shop_styles.box}>
-                <Card.Title><h3>{p.name}</h3></Card.Title><br/>
+                <Card.Title><h3>{p.name}</h3></Card.Title>
+                <h6>{p.description}</h6>
                 <Card.Body>
                     <img src='#' ></img>
-                    <h3>{p.price}/Litre</h3>
+                    <h3>Rs.{p.price}</h3>
                     {/* <h3 className={shop_styles.qty}>
                     <Button className={shop_styles.qtybtn}>-</Button>
                     <input type="text" min='0' defaultValue="1"></input>
                     <Button className={shop_styles.qtybtn}>+</Button>
                     </h3> */}
-                    <Button onClick={addtocart(p._id)} className={shop_styles.btn}>Add to Cart</Button>
+                    <Button onClick={()=>addtocart(p._id.toString())} className={shop_styles.btn}>Add to Cart</Button>
                 </Card.Body>
                 </Card>
             )}

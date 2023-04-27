@@ -2,9 +2,9 @@ const productModel = require('../models/productModel')
 
 const addProduct = async (req,res) => {
     try{
-        const {name,price,category,image} = req.body
+        const {name,description,price,category,image} = req.body
 
-        const product = await new productModel({name,price,category,image}).save()
+        const product = await new productModel({name,description,price,category,image}).save()
 
         if(product){
             res.status(201).send({

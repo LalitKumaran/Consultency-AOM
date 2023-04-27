@@ -8,7 +8,7 @@ import {FaRegUserCircle} from 'react-icons/fa'
 export const Login = () => {
 // toast.configure();
     const navigate = useNavigate()
-    const [user,setUser] = useState(JSON.parse(sessionStorage.getItem('user')))
+    const [user,setUser] = useState(JSON.parse(localStorage.getItem('user')))
 
     const [registerForm,setRegisterForm] = useState(false)
 
@@ -20,20 +20,20 @@ export const Login = () => {
             console.log(res.data)
             if(res.data.success){
                 setUser(res.data.user);
-                sessionStorage.setItem('user',JSON.stringify(res.data.user))
+                localStorage.setItem('user',JSON.stringify(res.data.user))
             }
             toast.success(res.data.message)
         }).catch((err)=>{console.log(err)})
     }
 
     useEffect(()=>{
-        setUser(JSON.parse(sessionStorage.getItem('user')))
+        setUser(JSON.parse(localStorage.getItem('user')))
         setRegisterForm(false)
     },[])
 
 
     const logout = () => {
-        sessionStorage.clear()
+        localStorage.clear()
         setUser()
     }
 
@@ -56,7 +56,7 @@ export const Login = () => {
                 setRegisterForm(false)
                 if(res.data.user){
                     setUser(res.data.user);
-                    sessionStorage.setItem('user',JSON.stringify(res.data.user))
+                    localStorage.setItem('user',JSON.stringify(res.data.user))
                 }
             }
             toast.success(res.data.message)

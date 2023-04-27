@@ -93,6 +93,11 @@ html {
 .category .boxcontainer .box h3 {
   font-size: 2rem;
   margin: 1rem 0;
+  color: black;
+}
+.category .boxcontainer .box h6 {
+  font-size: 1rem;
+  margin: 1rem 0;
   color: #666;
 }
 .category .boxcontainer .box:hover h3 {

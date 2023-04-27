@@ -16,6 +16,7 @@ export const AddProduct = () => {
             console.log(reader.result.split(',')[1])
         await axios.post('/api/product/new', {
           name: formData.get('name'),
+          description: formData.get('description'),
           price: formData.get('price'),
           category: formData.get('category'),
           image: reader.result.split(',')[1],
@@ -33,6 +34,10 @@ export const AddProduct = () => {
             <Form.Group className={addproduct_styles.formgroup}>
             <Form.Label className={addproduct_styles.formlabel}>Name</Form.Label>
             <Form.Control className={addproduct_styles.formcontrol} type="text" name="name"></Form.Control>
+            </Form.Group>
+            <Form.Group className={addproduct_styles.formgroup}>
+            <Form.Label className={addproduct_styles.formlabel}>description</Form.Label>
+            <Form.Control className={addproduct_styles.formcontrol} type="text" name="description"></Form.Control>
             </Form.Group>
             <Form.Group className={addproduct_styles.formgroup}>
             <Form.Label className={addproduct_styles.formlabel}>Price</Form.Label>
