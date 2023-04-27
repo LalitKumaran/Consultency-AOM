@@ -14,9 +14,18 @@ export const Cart = () => {
     const [carttotal,setCarttotal] = useState(0)
     
     const load = async () => {
-        const data = {uid:user.email}
-        console.log(data)
-        await axios.get('/api/cart/user/find',data).then((res)=>{
+        const config = {
+            headers: {
+              'Cache-Control': 'no-cache',
+              'Pragma': 'no-cache',
+              'If-Modified-Since': '0'
+            },
+            params: {
+              uid: user.email
+            }
+          };
+        await axios.get('/api/cart/user/find',config
+        ).then((res)=>{
             console.log(res.data)
             setCart(res.data.usercart.products)
             var total = 0;
@@ -27,7 +36,7 @@ export const Cart = () => {
         }).catch((err)=>{console.log(err)})
     }
 
-    const removeItem = async(productid)=>{
+    const removeItem = async(productid) => {
         const data = {uid:user.email,pid:productid}
         console.log(data)
         await axios.put('/api/cart/user/remove',data).then((res)=>{
@@ -41,12 +50,15 @@ export const Cart = () => {
     }
 
     useEffect(()=>{
-        load()
+        if(user){
+            load()
+        }
     },[])
 
     return (
         <>
         {user?
+        
         <div className={`${cart_styles.shopping_cart} active`}>
         {/* <div className={cart_styles.box}>
             <FaTimes className={cart_styles.fatimes}/>
