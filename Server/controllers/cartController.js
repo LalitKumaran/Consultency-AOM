@@ -43,7 +43,7 @@ catch(error){
 
 const getCart = async (req,res) => {
     try{
-        console.log(req.body)
+    console.log(req.body)
     const uid = req.body.uid
     console.log(uid)
     const usercart = await cartModel.findOne({user:uid})

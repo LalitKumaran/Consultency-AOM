@@ -16,7 +16,7 @@ export const Cart = () => {
     const load = async () => {
         const data = {uid:user.email}
         console.log(data)
-        await axios.get('/api/cart/user/find',{data}).then((res)=>{
+        await axios.get('/api/cart/user/find',data).then((res)=>{
             console.log(res.data)
             setCart(res.data.usercart.products)
             var total = 0;
