@@ -13,22 +13,14 @@ export const AddProduct = () => {
         const reader = new FileReader();
         reader.readAsDataURL(imageFile);
         reader.onloadend = async () => {
-            const config = {
-                headers: {
-                  'Cache-Control': 'no-cache',
-                  'Pragma': 'no-cache',
-                  'If-Modified-Since': '0'
-                },
-                params: {
-                    name: formData.get('name'),
-                    description: formData.get('description'),
-                    price: formData.get('price'),
-                    category: formData.get('category'),
-                    image: reader.result.split(',')[1],
-                }
-              };
             console.log(reader.result.split(',')[1])
-        await axios.post('/api/product/new', config)
+        await axios.post('/api/product/new', {
+            name: formData.get('name'),
+            description: formData.get('description'),
+            price: formData.get('price'),
+            category: formData.get('category'),
+            image: reader.result.split(',')[1],
+        })
         .then((res)=>{
             if(res.data.success){
                 toast.success(res.data.message)

@@ -17,14 +17,7 @@ export const Shop = () => {
     // const [quantity,setQuantity] = useState({})
 
     const load = async() => {
-        const config = {
-            headers: {
-              'Cache-Control': 'no-cache',
-              'Pragma': 'no-cache',
-              'If-Modified-Since': '0'
-            },
-          };
-        await axios.get('api/product/all',config).then((res)=>{
+        await axios.get('api/product/all').then((res)=>{
             console.log("response",res)
             setProducts(res.data.products)
             setFilter(res.data.products)

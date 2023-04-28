@@ -57,6 +57,7 @@ export const Cart = () => {
 
     return (
         <>
+        <Button onClick={removeItem("644a57edba41c4b881c9a0fa")}></Button>
         {user?
         
         <div className={`${cart_styles.shopping_cart} active`}>
