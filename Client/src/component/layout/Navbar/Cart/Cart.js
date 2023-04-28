@@ -24,9 +24,8 @@ export const Cart = () => {
               uid: user.email
             }
           };
-        await axios.get('/api/cart/user/find',config
-        ).then((res)=>{
-            console.log(res.data)
+        await axios.get('/api/cart/user/find',config).then((res)=>{
+            console.log("data"+res.data)
             setCart(res.data.usercart.products)
             var total = 0;
             res.data.cart.products.map((c,index)=>{
@@ -57,7 +56,7 @@ export const Cart = () => {
 
     return (
         <>
-        <Button onClick={removeItem("644a57edba41c4b881c9a0fa")}></Button>
+        {/* <Button onClick={removeItem("644a57edba41c4b881c9a0fa")}></Button> */}
         {user?
         
         <div className={`${cart_styles.shopping_cart} active`}>
