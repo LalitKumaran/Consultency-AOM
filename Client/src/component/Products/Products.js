@@ -17,7 +17,7 @@ export const Products = () => {
 
     useEffect( ()=>{
         load()
-    })
+    },[])
 
 return (
     <>

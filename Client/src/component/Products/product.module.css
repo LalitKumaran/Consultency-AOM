@@ -21,7 +21,7 @@ html {
     margin-top: 1rem;
     display: inline-block;
     padding: 0.8rem 3rem;
-    background: #bac34e;
+    background: #ffd700;
     color: #fff;
     font-size: 1.7rem;
     cursor: pointer;
@@ -53,7 +53,7 @@ html {
     padding-right: 0.5rem;
   }
   .heading p a:hover {
-    color: #bac34e;
+    color: #ffd700;
   }
   .title {
     display: flex;
@@ -65,7 +65,7 @@ html {
     color: #222;
   }
   .title span {
-    color: #bac34e;
+    color: #ffd700;
     padding-left: 0.7rem;
   }
   .title a {
@@ -74,7 +74,7 @@ html {
     font-size: 1.5rem;
   }
   .title a:hover {
-    color: #bac34e;
+    color: #ffd700;
   }
 
 .category .boxcontainer {
@@ -100,7 +100,7 @@ html {
   color: #666;
 }
 .category .boxcontainer .box:hover h3 {
-  color: #bac34e;
+  color: #ffd700;
 }
 
 .product{
@@ -125,7 +125,7 @@ html {
   flex: 1 1 40rem;
 }
 .product .content span {
-  color: #bac34e;
+  color: #ffd700;
   font-size: 2.5rem;
 }
 .product .content h3 {
@@ -181,7 +181,7 @@ html {
   color: #666;
 }
 .products .boxcontainer .box .icons a:hover {
-  background: #bac34e;
+  background: #ffd700;
   color: #fff;
 }
 .products .boxcontainer .box .image {
@@ -210,5 +210,5 @@ html {
 .products .box
 container .box .content .stars i {
   font-size: 1.7rem;
-  color: #bac34e;
+  color: #ffd700;
 } */

@@ -1,12 +1,12 @@
 import React from 'react'
 import contact_styles from './contact.module.css'
 import {Container} from 'react-bootstrap'
-import {FaPhone,FaMapMarkerAlt} from 'react-icons/fa'
+import {FaPhone,FaEnvelope,FaMapMarkerAlt} from 'react-icons/fa'
 export function Contact(){
     return (
     <div className={contact_styles.contact}>
     <Container className={contact_styles.boxcontainer}>
-        <h1 className={contact_styles.title}> Contact Us </h1>
+        <h1 className={contact_styles.title}> Contact <span>Us </span></h1>
     </Container>
 
 <div className={contact_styles.contact}>
@@ -21,7 +21,7 @@ export function Contact(){
         </div>
 
         <div className={contact_styles.icons}>
-            {/* <i><FaEnvelop/></i> */}
+            <i><FaEnvelope/></i>
             <h3>our email</h3>
             <p>arunamills@gmail.com</p>
             <p>arunaoilmill@gmail.com</p>
@@ -30,7 +30,7 @@ export function Contact(){
         <div className={contact_styles.icons}>
             <i><FaMapMarkerAlt/></i>
             <h3>our address</h3>
-            <p>mumbai, india - 400104</p>
+            <p>Erode, TamilNadu, India - 638002</p>
         </div>
 
     </div>

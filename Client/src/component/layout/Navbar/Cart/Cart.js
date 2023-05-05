@@ -1,9 +1,12 @@
 import cart_styles from './cart.module.css'
-import {useEffect,useState} from 'react'
+import {React,useEffect,useState} from 'react'
 import {Button} from 'react-bootstrap'
 import {FaTimes} from 'react-icons/fa'
 import {Login} from '../Login'
 import axios from 'axios'
+// import {Payment} from './../../../payment/Payment'
+import { Navigate, useNavigate } from 'react-router-dom';
+
 
 export const Cart = () => {
 
@@ -12,23 +15,15 @@ export const Cart = () => {
     const [user,setUser] = useState(JSON.parse(localStorage.getItem('user')))
 
     const [carttotal,setCarttotal] = useState(0)
+    const navigate=useNavigate();
     
     const load = async () => {
-        const config = {
-            headers: {
-              'Cache-Control': 'no-cache',
-              'Pragma': 'no-cache',
-              'If-Modified-Since': '0'
-            },
-            params: {
-              uid: user.email
-            }
-          };
-        await axios.get('/api/cart/user/find',config).then((res)=>{
-            console.log("data"+res.data)
+        var data = {"uid":user.email}
+        await axios.post('api/cart/user/find',data).then((res)=>{
+            console.log("data"+res.data.usercart)
             setCart(res.data.usercart.products)
             var total = 0;
-            res.data.cart.products.map((c,index)=>{
+            res.data.usercart.products.map((c,index)=>{
                 total += c.price
             })
             setCarttotal(total)
@@ -45,19 +40,18 @@ export const Cart = () => {
     }
 
     const checkout = () => {
-        //
+           navigate("/payment",{state:{amount:carttotal}})
     }
 
     useEffect(()=>{
         if(user){
-            load()
+             load()
         }
-    },[])
+    },[cart])
 
     return (
         <>
-        {/* <Button onClick={removeItem("644a57edba41c4b881c9a0fa")}></Button> */}
-        {user?
+        {user ? (cart.length>0 ?
         
         <div className={`${cart_styles.shopping_cart} active`}>
         {/* <div className={cart_styles.box}>
@@ -82,7 +76,7 @@ export const Cart = () => {
         )}
         <h3 className={cart_styles.total}> total : <span>{carttotal}</span> </h3>
         <Button onClick={checkout} className={cart_styles.btn}>checkout cart</Button>
-    </div>: <Login/> }</>
+    </div>: <></> ): <Login/> }</>
         
     )
 } 

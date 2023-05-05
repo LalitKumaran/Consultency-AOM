@@ -26,7 +26,7 @@ html {
   color: #222;
 }
 .title span {
-  color: #bac34e;
+  color: #ffd700;
   padding-left: 0.7rem;
 }
 .title a {
@@ -35,14 +35,14 @@ html {
   font-size: 1.5rem;
 }
 .title a:hover {
-  color: #bac34e;
+  color: #ffd700;
 }
 
 .btn {
   margin-top: 1rem;
   display: inline-block;
   padding: 0.8rem 3rem;
-  background: #bac34e;
+  background: #ffd700;
   color: #fff;
   font-size: 1.7rem;
   cursor: pointer;
@@ -75,7 +75,7 @@ html {
     flex: 1 1 40rem;
   }
   .about .content span {
-    color: #bac34e;
+    color: #ffd700;
     font-size: 2.5rem;
   }
   .about .content h3 {
@@ -132,7 +132,7 @@ html {
     margin: 0 1.5rem;
   }
   .gallery .boxcontainer .box .icons a:hover {
-    color: #bac34e;
+    color: #ffd700;
   }
   
   .infocontainer {
@@ -185,7 +185,7 @@ html {
   }
   .review .box .user span {
     font-size: 1.4rem;
-    color: #bac34e;
+    color: #ffd700;
   }
   .review .box p {
     font-size: 1.4rem;
