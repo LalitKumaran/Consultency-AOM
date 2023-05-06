@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require('path')
-app.use(express.json());
+app.use(express.json({limit: '50mb'}));
 
 const core = require('cors')
 app.use(core())
@@ -31,6 +31,9 @@ app.use('/api/auth',authRoutes)
 
 const productRoutes = require('./routes/productRoute.js')
 app.use('/api/product',productRoutes)
+
+const cartRoutes = require('./routes/cartRoute.js')
+app.use('/api/cart',cartRoutes)
 
 
 app.use(express.static(path.join(__dirname, '../Client/build')));

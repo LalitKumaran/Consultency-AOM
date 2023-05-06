@@ -2,11 +2,13 @@ import {useState,useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import login_styles from './login.module.css'
 import axios from 'axios'
-
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {FaRegUserCircle} from 'react-icons/fa'
 export const Login = () => {
-
+// toast.configure();
     const navigate = useNavigate()
-    const [user,setUser] = useState(JSON.parse(sessionStorage.getItem('user')))
+    const [user,setUser] = useState(JSON.parse(localStorage.getItem('user')))
 
     const [registerForm,setRegisterForm] = useState(false)
 
@@ -14,24 +16,24 @@ export const Login = () => {
         e.preventDefault()
         const data = {email:e.target.email.value,password:e.target.password.value}
         console.log(data)
-        await axios.post('http://localhost:8080/api/auth/login',data).then((res)=>{
+        await axios.post('/api/auth/login',data).then((res)=>{
             console.log(res.data)
             if(res.data.success){
                 setUser(res.data.user);
-                sessionStorage.setItem('user',JSON.stringify(res.data.user))
+                localStorage.setItem('user',JSON.stringify(res.data.user))
             }
-            alert(res.data.message)
+            toast.success(res.data.message)
         }).catch((err)=>{console.log(err)})
     }
 
     useEffect(()=>{
-        setUser(JSON.parse(sessionStorage.getItem('user')))
+        setUser(JSON.parse(localStorage.getItem('user')))
         setRegisterForm(false)
     },[])
 
 
     const logout = () => {
-        sessionStorage.clear()
+        localStorage.clear()
         setUser()
     }
 
@@ -40,7 +42,7 @@ export const Login = () => {
             setRegisterForm(!registerForm)
         }
         else{
-            alert("Session Exists") 
+            toast.warning("Session Exists")
         } 
     }
 
@@ -48,16 +50,16 @@ export const Login = () => {
         e.preventDefault()
         const data = {name:e.target.name.value,email:e.target.email.value,password:e.target.password.value,phone:e.target.phone.value,address:e.target.address.value}
         console.log(data)
-        await axios.post('http://localhost:8080/api/auth/register',data).then((res)=>{
+        await axios.post('/api/auth/register',data).then((res)=>{
             console.log(res.data)
             if(res.data.success===true){
                 setRegisterForm(false)
                 if(res.data.user){
                     setUser(res.data.user);
-                    sessionStorage.setItem('user',JSON.stringify(res.data.user))
+                    localStorage.setItem('user',JSON.stringify(res.data.user))
                 }
             }
-            alert(res.data.message)
+            toast.success(res.data.message)
         }).catch((err)=>{console.log(err)})
     }
 
@@ -83,11 +85,16 @@ export const Login = () => {
 
 
         //profile
+        
         <div className={`${login_styles.loginform} active`}>
-        <p>{user.name}</p>
+            <div className={login_styles.userform}>
+            <p className={login_styles.userfornt}><FaRegUserCircle/></p>
+        <p >{user.name}</p>
+        </div>
         <p>{user.phone}</p>
         <p>{user.address}</p>
-        <button onClick={logout}> Logout </button>
+        <p className={login_styles.logout}>
+        <button onClick={logout}> Logout </button></p>
         </div> 
         
         : 

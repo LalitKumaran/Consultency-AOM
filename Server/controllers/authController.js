@@ -1,4 +1,5 @@
 const userModel = require('../models/userModel.js')
+const cartModel = require('../models/cartModel.js')
 const {hashPassword,comparePassword} = require('../helper/authHelper.js')
 const JWT = require('jsonwebtoken')
 
@@ -32,11 +33,14 @@ const registerController = async (req,res) => {
 
         const user = await new userModel({name,email:email.toLowerCase(),phone,address,password:hashedPassword}).save()
 
+        const cart = await new cartModel({user:user._id},{products:[]}).save()
+        
         const token = await JWT.sign({user_id:user._id,email},process.env.JWT_SECRET,{
             expiresIn: "2h",
         })
 
         user.token = token
+
 
         res.status(201).send({
             success:true,
@@ -91,13 +95,7 @@ const loginController = async (req,res) => {
         res.status(200).send({
             success:true,
             message: 'Login Successful',
-            user:{
-                name:user.name,
-                email:user.email,
-                phone:user.phone,
-                address:user.address,
-                token : user.token
-            },
+            user,
         })
 
     }catch(error){

@@ -2,9 +2,11 @@ const productModel = require('../models/productModel')
 
 const addProduct = async (req,res) => {
     try{
-        const {name,price,image} = req.body
+        console.log("New Product")
+        const {name,description,price,category,image} = req.body
+        console.log(req.body)
 
-        const product = await new productModel({name,price,image}).save()
+        const product = await new productModel({name,description,price,category,image}).save()
 
         if(product){
             res.status(201).send({
@@ -51,7 +53,7 @@ const getProduct = async (req,res) => {
                 })
             } 
     }
-    catch(err){
+    catch(error){
         console.log(error)
         res.status(500).send({
             success:false,
@@ -63,10 +65,11 @@ const getProduct = async (req,res) => {
 }
 
 const allProducts = async (req,res) => {
-    
    try{
     const products = await productModel.find()
-    res.status(201).send({
+    console.log(products)
+    
+    res.status(200).send({
         success : true,
         message : "All Products",
         products,
@@ -79,4 +82,6 @@ const allProducts = async (req,res) => {
     })
    }
 } 
-module.exports = {addProduct,getProduct};
+
+
+module.exports = {addProduct,getProduct,allProducts};

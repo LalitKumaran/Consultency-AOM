@@ -1,14 +1,13 @@
 import React from 'react'
 import contact_styles from './contact.module.css'
-import {} from 'react-bootstrap'
-import {FaPhone,FaMapMarkerAlt} from 'react-icons/fa'
+import {Container} from 'react-bootstrap'
+import {FaPhone,FaEnvelope,FaMapMarkerAlt} from 'react-icons/fa'
 export function Contact(){
     return (
-    <div className={contact_styles}>
-    <div className={contact_styles.heading}>
-        <h1>contact us</h1>
-        <p> <a href="home.html">home </a> contact </p>
-    </div>
+    <div className={contact_styles.contact}>
+    <Container className={contact_styles.boxcontainer}>
+        <h1 className={contact_styles.title}> Contact <span>Us </span></h1>
+    </Container>
 
 <div className={contact_styles.contact}>
 
@@ -22,7 +21,7 @@ export function Contact(){
         </div>
 
         <div className={contact_styles.icons}>
-            {/* <i><FaEnvelop/></i> */}
+            <i><FaEnvelope/></i>
             <h3>our email</h3>
             <p>arunamills@gmail.com</p>
             <p>arunaoilmill@gmail.com</p>
@@ -31,7 +30,7 @@ export function Contact(){
         <div className={contact_styles.icons}>
             <i><FaMapMarkerAlt/></i>
             <h3>our address</h3>
-            <p>mumbai, india - 400104</p>
+            <p>Erode, TamilNadu, India - 638002</p>
         </div>
 
     </div>
@@ -41,15 +40,15 @@ export function Contact(){
         <form>
             <h3>get in touch</h3>
             <div className={contact_styles.inputBox}>
-                <input type="text" placeholder="enter your name" class="box"/>
-                <input type="email" placeholder="enter your email" class="box"/>
+                <input type="text" placeholder="enter your name" className={contact_styles.box}/>
+                <input type="email" placeholder="enter your email" className={contact_styles.box}/>
             </div>
             <div className={contact_styles.inputBox}>
-                <input type="number" placeholder="enter your number" class="box"/>
-                <input type="text" placeholder="enter your subject" class="box"/>
+                <input type="number" placeholder="enter your number" className={contact_styles.box}/>
+                <input type="text" placeholder="enter your subject" className={contact_styles.box}/>
             </div>
             <textarea placeholder="your message" cols="30" rows="10"></textarea>
-            <input type="submit" value="send message" class="btn"/>
+            <input type="submit" value="send message" className={contact_styles.btn}/>
         </form>
 
         <iframe className={contact_styles.map}  allowfullscreen="" loading="lazy"></iframe>

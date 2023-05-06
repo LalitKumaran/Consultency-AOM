@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route,Routes} from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import './App.css';
 import {Header} from './component/layout/Header/Header'
 import {Footer} from './component/layout/Footer/Footer'
@@ -7,13 +8,17 @@ import {Products} from './component/Products/Products'
 import {Shop} from './component/Shop/Shop'
 import {About} from './component/About/About'
 import {Contact} from './component/Contact/contact'
-import {AddProduct} from './component/Admin/AddProduct'
-
+import {AddProduct} from './component/Admin/new'
+import Payment from "./component/payment/Payment"
 function App() {
   return (
-
+        
   <Router>
+    <header>
+    <ToastContainer/>
     <Header/>
+    </header>
+    <main>
     <Routes>
       <Route path='/' element={<Home/>}></Route>
       <Route path='/products' element={<Products/>}></Route> 
@@ -21,9 +26,13 @@ function App() {
       <Route path='/about' element={<About/>}></Route> 
       <Route path='/contact' element={<Contact/>}></Route> 
       <Route path="/admin/newproduct" element={<AddProduct/>}></Route>
-    </Routes>
+      <Route path="/payment" element={<Payment/>}></Route>
 
+    </Routes>
+    </main>
+    <footer>
     <Footer/>
+    </footer>
   </Router>
     
   );
