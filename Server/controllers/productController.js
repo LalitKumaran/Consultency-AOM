@@ -33,18 +33,32 @@ const addProduct = async (req,res) => {
     }
     
 }
-// const updateproduct=async(req,res)=>
-// {
-//     try{
-//         const pid=req.params.pid
-//         const product =await productModel.find({_id:pid})
-//         if(product)
-//         {
-//             await productModel.updateOne({ user: pid }, {  });
+const updateproduct=async(req,res)=>
+{
+    try{
+        const pid=req.body.pid
+        console.log(req.body)
+        const product =await productModel.find({_id:pid})
+        if(product)
+        {
+            await productModel.updateOne({ _id: pid }, { name:req.body.name , description:req.body.description,price:req.params.price});
+            res.send("success");
 
-//         }
-//     }
-// }
+
+        }
+        else{
+            res.send("not found")
+        }
+    }
+    catch(error){
+        console.log(error)
+        res.status(500).send({
+            success:false,
+            message:'Error in getting Product',
+            error
+        })
+    }
+}
 
 const getProduct = async (req,res) => {
     try{
@@ -96,4 +110,4 @@ const allProducts = async (req,res) => {
 } 
 
 
-module.exports = {addProduct,getProduct,allProducts};
+module.exports = {addProduct,getProduct,allProducts,updateproduct};

@@ -3,7 +3,11 @@ import shop_styles from './shop.module.css'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import {Container,Card,Button} from 'react-bootstrap' 
-
+import {FaEdit} from 'react-icons/fa'
+import { UpdateProduct } from '../Admin/UpdateProduct'
+import { useNavigate } from 'react-router-dom'
+import ListContext from '../Admin/ListContext'
+import { Link } from 'react-router-dom'
 export const Shop = () => {
 
     const [products,setProducts] = useState([])
@@ -11,7 +15,7 @@ export const Shop = () => {
     const [filter,setFilter] = useState([])
 
     const [user,setUser] = useState(JSON.parse(localStorage.getItem('user')))
-
+    const Navigate=useNavigate()
     // const [state,setState] =useState({"wholesale":false,"retail":false})
 
     // const [quantity,setQuantity] = useState({})
@@ -41,7 +45,7 @@ export const Shop = () => {
             }).catch((err)=>{console.log(err)})
         }     
     }
-
+    
     // const incqty = (id) => {
     //     const newQuant = [...quantity];
     //     newQuant[id] += 1;
@@ -62,6 +66,9 @@ export const Shop = () => {
         console.log("products",products)
         console.log("filter",products)
     })
+    useEffect(() => {
+        setUser(JSON.parse(localStorage.getItem('user')))
+      },[])
 
     return (
         <>
@@ -77,6 +84,15 @@ export const Shop = () => {
         <Container className={shop_styles.boxcontainer}>
             {filter.map((p,index)=>
                 <Card key={index} className={shop_styles.box}>
+                    
+                    {user &&user.role===1 ? <FaEdit onClick={function()
+                    {
+                        
+                    
+                        Navigate("/admin/update",{state:{amount:p}})
+                    }
+                       
+                 } />:<></>}
                 <Card.Title><h3>{p.name}</h3></Card.Title>
                 <h6>{p.description}</h6>
                 <Card.Body>

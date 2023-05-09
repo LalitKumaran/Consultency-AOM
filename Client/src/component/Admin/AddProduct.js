@@ -2,7 +2,6 @@ import axios from 'axios'
 import addproduct_styles from './addproduct.module.css'
 import {toast} from 'react-toastify'
 import {Form,Button,Container} from 'react-bootstrap'
-
 export const AddProduct = () => {
 
     const add = async (e) => {
