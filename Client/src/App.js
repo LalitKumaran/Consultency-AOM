@@ -9,6 +9,7 @@ import {Shop} from './component/Shop/Shop'
 import {About} from './component/About/About'
 import {Contact} from './component/Contact/contact'
 import {AddProduct} from './component/Admin/new'
+import {UpdateProduct} from './component/Admin/UpdateProduct'
 import Payment from "./component/payment/Payment"
 import { useState } from "react";
 function App() {
@@ -28,8 +29,8 @@ function App() {
       <Route path='/about' element={<About/>}></Route> 
       <Route path='/contact' element={<Contact/>}></Route> 
       <Route path="/admin/newproduct" element={<AddProduct/>}></Route>
+      <Route path="/admin/updateproduct/:pid" element={<UpdateProduct/>}></Route>
       <Route path="/payment" element={<Payment/>}></Route>
-      
 
     </Routes>
     </main>
