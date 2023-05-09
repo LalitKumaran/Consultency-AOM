@@ -69,10 +69,10 @@ export const Shop = () => {
         <Container className={shop_styles.boxcontainer}>
         <h1 className={shop_styles.title}> Our <span>Products</span> <a href="#"></a> </h1>
         </Container>
-        <Container className={shop_styles.boxcontainer}>
+        {/* <Container className={shop_styles.boxcontainer}>
         <Button className={shop_styles.btn}>WholeSale</Button>
         <Button className={shop_styles.btn}>Retail</Button>
-        </Container>
+        </Container> */}
 
         <Container className={shop_styles.boxcontainer}>
             {filter.map((p,index)=>

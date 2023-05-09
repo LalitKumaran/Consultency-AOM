@@ -4,7 +4,7 @@ const router = express.Router()
 
 router.post('/new',addItem);
 
-router.get('/user/find',getCart);
+router.post('/user/find',getCart);
 
 router.put('/user/remove',removeItem);
 

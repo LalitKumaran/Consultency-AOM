@@ -41,7 +41,7 @@ html {
   padding-right: 0.5rem;
 }
 .heading p a:hover {
-  color: #bac34e;
+  color: #ffd700;
 }
 
 
@@ -55,7 +55,7 @@ html {
   color: #222;
 }
 .title span {
-  color: #bac34e;
+  color: #ffd700;
   padding-left: 0.7rem;
 }
 .title a {
@@ -64,14 +64,14 @@ html {
   font-size: 1.5rem;
 }
 .title a:hover {
-  color: #bac34e;
+  color: #ffd700;
 }
 
 .btn {
   margin-top: 1rem;
   display: inline-block;
   padding: 0.8rem 3rem;
-  background: #bac34e;
+  background: #ffd700;
   color: #fff;
   font-size: 1.7rem;
   cursor: pointer;
@@ -106,7 +106,8 @@ html {
     width: 6rem;
     line-height: 6rem;
     font-size: 2.5rem;
-    background: #bac34e;
+    padding: 8px;
+    background: #ffd700;
     color: #fff;
     border-radius: 50%;
   }

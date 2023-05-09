@@ -2,7 +2,9 @@ const productModel = require('../models/productModel')
 
 const addProduct = async (req,res) => {
     try{
+        console.log("New Product")
         const {name,description,price,category,image} = req.body
+        console.log(req.body)
 
         const product = await new productModel({name,description,price,category,image}).save()
 
@@ -80,4 +82,6 @@ const allProducts = async (req,res) => {
     })
    }
 } 
+
+
 module.exports = {addProduct,getProduct,allProducts};

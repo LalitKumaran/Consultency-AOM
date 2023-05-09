@@ -8,8 +8,8 @@ import {Products} from './component/Products/Products'
 import {Shop} from './component/Shop/Shop'
 import {About} from './component/About/About'
 import {Contact} from './component/Contact/contact'
-import {AddProduct} from './component/Admin/AddProduct'
-
+import {AddProduct} from './component/Admin/new'
+import Payment from "./component/payment/Payment"
 function App() {
   return (
         
@@ -26,6 +26,8 @@ function App() {
       <Route path='/about' element={<About/>}></Route> 
       <Route path='/contact' element={<Contact/>}></Route> 
       <Route path="/admin/newproduct" element={<AddProduct/>}></Route>
+      <Route path="/payment" element={<Payment/>}></Route>
+
     </Routes>
     </main>
     <footer>

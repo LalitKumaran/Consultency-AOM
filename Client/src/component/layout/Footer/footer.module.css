@@ -37,14 +37,14 @@
     display: block;
   }
   .footer .boxcontainer .box a:hover {
-    color: #bac34e;
+    color: #ffd700;
   }
   .footer .boxcontainer .box a:hover i {
     padding-right: 2rem;
   }
   .footer .boxcontainer .box a i {
     padding-right: 0.5rem;
-    color: #bac34e;
+    color: #ffd700;
   }
   .footer .boxcontainer .box form input[type=email] {
     width: 100%;
@@ -62,7 +62,7 @@
     margin-top: 1rem;
     display: inline-block;
     padding: 0.8rem 3rem;
-    background: #bac34e;
+    background: #ffd700;
     color: #fff;
     font-size: 1.7rem;
     cursor: pointer;

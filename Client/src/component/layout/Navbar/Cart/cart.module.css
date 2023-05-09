@@ -19,7 +19,7 @@ html {
   margin-top: 1rem;
   display: inline-block;
   padding: 0.8rem 3rem;
-  background: #bac34e;
+  background: #ffd700;
   color: #fff;
   font-size: 1.7rem;
   cursor: pointer;
@@ -57,7 +57,7 @@ html {
   cursor: pointer;
 }
  .shopping_cart .box .fatimes:hover {
-  color: #bac34e;
+  color: #ffd700;
 }
  .shopping_cart .box img {
   height: 10rem;
