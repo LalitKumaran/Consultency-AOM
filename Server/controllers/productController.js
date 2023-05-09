@@ -33,6 +33,18 @@ const addProduct = async (req,res) => {
     }
     
 }
+// const updateproduct=async(req,res)=>
+// {
+//     try{
+//         const pid=req.params.pid
+//         const product =await productModel.find({_id:pid})
+//         if(product)
+//         {
+//             await productModel.updateOne({ user: pid }, {  });
+
+//         }
+//     }
+// }
 
 const getProduct = async (req,res) => {
     try{
