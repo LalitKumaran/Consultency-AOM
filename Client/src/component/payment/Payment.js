@@ -1,6 +1,7 @@
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import payment_styles from './payment.module.css'
 import {useLocation} from 'react-router-dom';
+import axios from 'axios'
 
  function Payment() {
     const location = useLocation()
@@ -21,11 +22,13 @@ import {useLocation} from 'react-router-dom';
                         ],
                     });
                 }}
-                onApprove={(data, actions) => {
+                onApprove= {(data, actions) => {
                     return actions.order.capture().then((details) => {
                         const name = details.payer.name.given_name;
                         alert(`Transaction completed by ${name}`);
+                        // axios.put('api/cart/user/checkout',{})
                     });
+            
                 }}
             />
         </PayPalScriptProvider>

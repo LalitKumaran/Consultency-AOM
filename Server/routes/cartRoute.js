@@ -8,5 +8,5 @@ router.post('/user/find',getCart);
 
 router.put('/user/remove',removeItem);
 
-
+// router.put('/user/checkout',checkout)
 module.exports = router;

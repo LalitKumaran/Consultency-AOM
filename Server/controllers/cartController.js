@@ -43,9 +43,9 @@ catch(error){
 
 const getCart = async (req,res) => {
     try{
-    console.log(req)
+    // console.log(req)
     const {uid} = req.body
-    console.log(uid)
+    // console.log(uid)
     const usercart = await cartModel.findOne({user:uid})
     console.log(usercart)
     if(usercart){
@@ -106,4 +106,38 @@ const removeItem = async(req,res)=> {
         })
     }
 }
+// const checkout = async(req,res)=> {
+//     try{
+//         const {cid}  = req.body
+
+//         const usercart = await cartModel.findOne({_id:cid})
+
+//         if(usercart){
+//             const newcart = usercart.filter(c => c._id.toString() !== cid);
+//             await cartModel.updateOne( { newcart });
+
+//             const updatedCart = await cartModel.findOne({ _id:cid });
+
+//               res.status(200).send({
+//                 success:true,
+//                 message:"Cart Emptied",
+//                 updatedCart
+//               })
+//         }
+//         else{
+//             res.status(304).send({
+//                 success:false,
+//                 message:"Cart not exists",
+//             })
+//         }
+
+//     }
+//     catch{
+//         res.status(500).send({
+//             success:false,
+//             message:"Internal Error",
+//             error
+//         })
+//     }
+// }
 module.exports = {addItem,getCart,removeItem};
