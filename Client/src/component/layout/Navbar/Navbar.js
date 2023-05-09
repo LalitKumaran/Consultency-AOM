@@ -14,6 +14,8 @@ export function NavBar(){
     const [searchForm,setSearchForm] = useState({"toggle":false,"disp":"none"});
     const [cart,setCart] = useState({"toggle":false,"disp":"none"});
     const [loginForm,setLoginForm] = useState({"toggle":false,"disp":"none"});
+    const [user,setUser] = useState(JSON.parse(localStorage.getItem('user')))
+
 
     const searchFormActivate = () => {
       setLoginForm({"toggle":false,"disp":"none"})
@@ -61,7 +63,12 @@ export function NavBar(){
   
     useEffect(() => {
       window.addEventListener('scroll', onScroll);
+      setUser(JSON.parse(localStorage.getItem('user')))
     },[]);
+
+    useEffect(() => {
+      setUser(JSON.parse(localStorage.getItem('user')))
+    },[])
 
     return (
       <>
@@ -74,6 +81,8 @@ export function NavBar(){
             <NavLink to='/shop'>Shop</NavLink>
             <NavLink to='/about'>About</NavLink>
             <NavLink to='/contact'>Contact</NavLink>
+            {user && user.role===1? 
+            <NavLink to='/admin/newproduct'>New Product</NavLink>:<></>}
         </nav>
 
         <div>

@@ -106,38 +106,41 @@ const removeItem = async(req,res)=> {
         })
     }
 }
-// const checkout = async(req,res)=> {
-//     try{
-//         const {cid}  = req.body
+const checkoutCart = async(req,res)=> {
+    console.log("server",req.body)
 
-//         const usercart = await cartModel.findOne({_id:cid})
+    try{
+        const {uid}  = req.body
 
-//         if(usercart){
-//             const newcart = usercart.filter(c => c._id.toString() !== cid);
-//             await cartModel.updateOne( { newcart });
 
-//             const updatedCart = await cartModel.findOne({ _id:cid });
+        const usercart = await cartModel.findOne({user:uid})
 
-//               res.status(200).send({
-//                 success:true,
-//                 message:"Cart Emptied",
-//                 updatedCart
-//               })
-//         }
-//         else{
-//             res.status(304).send({
-//                 success:false,
-//                 message:"Cart not exists",
-//             })
-//         }
+        if(usercart){
+            await cartModel.updateOne({ user: uid }, {products:[]});
 
-//     }
-//     catch{
-//         res.status(500).send({
-//             success:false,
-//             message:"Internal Error",
-//             error
-//         })
-//     }
-// }
-module.exports = {addItem,getCart,removeItem};
+            const updatedCart = await cartModel.findOne({ user: uid });
+
+              res.status(200).send({
+                success:true,
+                message:"Checked out successfully",
+                updatedCart
+              })
+        }
+        else{
+            res.status(304).send({
+                success:false,
+                message:"Cart doesn't exists",
+            })
+        }
+
+    }
+    catch{
+        res.status(500).send({
+            success:false,
+            message:"Internal Error",
+            error
+        })
+    }
+}
+
+module.exports = {addItem,getCart,removeItem,checkoutCart};

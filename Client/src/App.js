@@ -13,7 +13,6 @@ import Payment from "./component/payment/Payment"
 import { useState } from "react";
 function App() {
   const [user,setUser] = useState(JSON.parse(localStorage.getItem('user')))
-  console.log(user.length)
   return (
         
   <Router>
@@ -30,6 +29,7 @@ function App() {
       <Route path='/contact' element={<Contact/>}></Route> 
       <Route path="/admin/newproduct" element={<AddProduct/>}></Route>
       <Route path="/payment" element={<Payment/>}></Route>
+      
 
     </Routes>
     </main>
