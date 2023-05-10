@@ -1,5 +1,4 @@
 const productModel = require('../models/productModel')
-z
 const addProduct = async (req,res) => {
     try{
         console.log("New Product")
