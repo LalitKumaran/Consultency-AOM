@@ -11,7 +11,6 @@ import {About} from './component/About/About'
 import {Contact} from './component/Contact/contact'
 import {AddProduct} from './component/Admin/new'
 import Payment from "./component/payment/Payment"
-import { useState } from "react";
 import { UpdateProduct } from './component/Admin/UpdateProduct';
 function App() {
   const [user,setUser] = useState(JSON.parse(localStorage.getItem('user')))
