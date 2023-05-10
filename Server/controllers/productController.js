@@ -1,5 +1,5 @@
 const productModel = require('../models/productModel')
-
+z
 const addProduct = async (req,res) => {
     try{
         console.log("New Product")
@@ -42,8 +42,11 @@ const updateproduct=async(req,res)=>
         if(product)
         {
             await productModel.updateOne({ _id: pid }, { name:req.body.name , description:req.body.description,price:req.params.price});
-            res.send("success");
-
+            res.status(201).send({
+                success:true,
+                message:"Product updated Successfully",
+                product,
+            })
 
         }
         else{

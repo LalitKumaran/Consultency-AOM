@@ -6,7 +6,6 @@ import {Container,Card,Button} from 'react-bootstrap'
 import {FaEdit} from 'react-icons/fa'
 import { UpdateProduct } from '../Admin/UpdateProduct'
 import { useNavigate } from 'react-router-dom'
-import ListContext from '../Admin/ListContext'
 import { Link } from 'react-router-dom'
 export const Shop = () => {
 
