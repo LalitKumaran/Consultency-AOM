@@ -36,6 +36,7 @@ html {
     position: relative;
     width:100%;
     
+    
   }
   .home .slidescontainer .slide {
     display: flex;
@@ -46,7 +47,7 @@ html {
     padding-left: 2%;
     /* position: absolute; */
     
-    /* height:400px; */
+    height:550px;
     /* display: none; */
   }
   .home .slidescontainer .slide.active {

@@ -1,8 +1,30 @@
 import React from 'react'
+import { useRef } from 'react'
 import contact_styles from './contact.module.css'
 import {Container} from 'react-bootstrap'
 import {FaPhone,FaEnvelope,FaMapMarkerAlt} from 'react-icons/fa'
+import emailjs from "@emailjs/browser"
 export function Contact(){
+    const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_enm3nug",
+        "template_1e5bgqc",
+        form.current,
+        "eHmW_XodFjp6QH9RC"
+      )
+      .then(() => {
+        alert('Mail sent successfully!');
+        e.target.reset();
+      })
+      .catch(() => {
+        alert('Oops! Something went wrong.');
+      });
+  };
     return (
     <div className={contact_styles.contact}>
     <Container className={contact_styles.boxcontainer}>
@@ -37,17 +59,17 @@ export function Contact(){
 
     <div className={contact_styles.row}>
 
-        <form>
+        <form ref={form} onSubmit={sendEmail}>
             <h3>get in touch</h3>
             <div className={contact_styles.inputBox}>
-                <input type="text" placeholder="enter your name" className={contact_styles.box}/>
-                <input type="email" placeholder="enter your email" className={contact_styles.box}/>
+                <input type="text" placeholder="enter your name" name="user_name" className={contact_styles.box}/>
+                <input type="email" placeholder="enter your email" name="user_email" className={contact_styles.box}/>
             </div>
             <div className={contact_styles.inputBox}>
-                <input type="number" placeholder="enter your number" className={contact_styles.box}/>
-                <input type="text" placeholder="enter your subject" className={contact_styles.box}/>
+                <input type="number" placeholder="enter your number" name="user_number" className={contact_styles.box}/>
+                <input type="text" placeholder="enter your subject" name="user_subject" className={contact_styles.box}/>
             </div>
-            <textarea placeholder="your message" cols="30" rows="10"></textarea>
+            <textarea placeholder="your message" name="message" cols="30" rows="10"></textarea>
             <input type="submit" value="send message" className={contact_styles.btn}/>
         </form>
 

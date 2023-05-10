@@ -4,7 +4,7 @@ import axios from 'axios'
 import {Card} from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
 import {FaStar,FaShoppingCart,FaEye,FaHeart} from 'react-icons/fa'
-
+// import Testimonial from './Testimonial'
 export const Products = () => {
 
     const [products,setProducts] = useState([{"name":"","price":0}])
@@ -21,6 +21,7 @@ export const Products = () => {
 
 return (
     <>
+    
     <div className={product_styles.category}>
         <h1 className={product_styles.title}> our <span>category</span> <a href="#"></a> </h1>
 
@@ -63,7 +64,11 @@ return (
                 <img src="/assets/image/pngegg (8).png" alt=""/>
             </div>
         </Card>
+        
         </div>
+        
+            
+        
         
 {/* <div className={product_styles.products}>
 
