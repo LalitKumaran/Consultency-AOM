@@ -86,8 +86,6 @@ export const Shop = () => {
                     
                     {user &&user.role===1 ? <FaEdit onClick={function()
                     {
-                        
-                    
                         Navigate("/admin/update",{state:{amount:p}})
                     }
                        
@@ -95,7 +93,7 @@ export const Shop = () => {
                 <Card.Title><h3>{p.name}</h3></Card.Title>
                 <h6>{p.description}</h6>
                 <Card.Body>
-                    <img src='#' ></img>
+                    <img src={p.image} ></img>
                     <h3>Rs.{p.price}</h3>
                     {/* <h3 className={shop_styles.qty}>
                     <Button className={shop_styles.qtybtn}>-</Button>
