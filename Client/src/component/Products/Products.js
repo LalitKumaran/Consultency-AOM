@@ -42,12 +42,12 @@ return (
         <h1 className={product_styles.title}> our <span>Products</span> <a href="#"></a> </h1>
         <Card className={product_styles.boxcontainer}>
             <div className={product_styles.image}>
-                <img src="/assets/image/pngegg (8).png" alt=""/>
+                <img src="https://plus.unsplash.com/premium_photo-1664391616054-1671f1b7f75d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=478&q=80" alt=""/>
             </div>
             <div className={product_styles.content}>
                 {/* <span>welcome to our shop</span> */}
-                <h3>fresh and organic groceries</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vel sequi nostrum quae nobis non quaerat nisi voluptatibus recusandae reprehenderit tempore eligendi, eum quibusdam perferendis dicta, incidunt dolores nemo ex.</p>
+                <h3>Seasame Oil</h3>
+                <p>Sesame oil, known for its distinct nutty flavor, is a versatile cooking oil that's perfect for enhancing the taste of your dishes. Our premium sesame oil is extracted from high-quality sesame seeds, using traditional methods to preserve its natural goodness. With its high smoke point and rich aroma, our sesame oil is ideal for stir-frying, sautéing, and even as a salad dressing. Add a dash of our sesame oil to your dishes and enjoy a burst of flavor that will tantalize your taste buds.</p>
                 {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem cumque molestiae blanditiis deleniti aspernatur, ab tempora quisquam sapiente commodi hic.</p> */}
                 <a href="#" className={product_styles.btn}>read more</a>
             </div>
@@ -55,13 +55,25 @@ return (
         <Card className={product_styles.boxcontainer}>
             <div className={product_styles.content}>
                 {/* <span>welcome to our shop</span> */}
-                <h3>fresh and organic groceries</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vel sequi nostrum quae nobis non quaerat nisi voluptatibus recusandae reprehenderit tempore eligendi, eum quibusdam perferendis dicta, incidunt dolores nemo ex.</p>
+                <h3>coconut oil</h3>
+                <p>Our coconut oil is a versatile and natural product that can be used in a variety of ways. Made from the flesh of mature coconuts, it's rich in healthy fats that are essential for a balanced diet. With its delicate flavor and aroma, our coconut oil is perfect for cooking, baking, and even as a moisturizer for your skin and hair. Whether you're making a curry or a smoothie, our coconut oil will add a delicious tropical twist to your recipes.</p>
                 {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem cumque molestiae blanditiis deleniti aspernatur, ab tempora quisquam sapiente commodi hic.</p> */}
                 <a href="#" className={product_styles.btn}>read more</a>
             </div>
             <div className={product_styles.image}>
-                <img src="/assets/image/pngegg (8).png" alt=""/>
+                <img src="https://images.unsplash.com/photo-1588413336009-1f4219f2d5dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt=""/>
+            </div>
+        </Card>
+        <Card className={product_styles.boxcontainer}>
+            <div className={product_styles.image}>
+                <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=418&q=80" alt=""/>
+            </div>
+            <div className={product_styles.content}>
+                {/* <span>welcome to our shop</span> */}
+                <h3>refined Oil</h3>
+                <p>Our refined oil is a pure and high-quality cooking oil that's perfect for everyday use. Extracted from high-quality seeds, it's processed to remove any impurities, ensuring a clean and healthy oil. With its neutral taste and high smoke point, our refined oil is perfect for frying, baking, and sautéing. Our refined oil is a staple in every kitchen, providing a reliable and versatile oil that can be used in a variety of dishes.</p>
+                {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem cumque molestiae blanditiis deleniti aspernatur, ab tempora quisquam sapiente commodi hic.</p> */}
+                <a href="#" className={product_styles.btn}>read more</a>
             </div>
         </Card>
         
