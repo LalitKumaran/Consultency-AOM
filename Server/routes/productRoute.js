@@ -4,7 +4,7 @@ const router = express.Router()
 const multer = require('multer')
 let uuidv4 = require('uuid/v4')
 
-const DIR = './public/';
+const DIR = '../Client/public/pdts';
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, DIR);

@@ -14,7 +14,8 @@ const addProduct = async (req,res) => {
             description: req.body.description,
             price : req.body.price,
             category : req.body.category,
-            image : url + '/public/' + req.file.filename
+            image : 'pdts/'+req.file.filename
+
         });
 
         console.log(newproduct)
