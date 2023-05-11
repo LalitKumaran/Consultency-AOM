@@ -9,7 +9,7 @@ import {Products} from './component/Products/Products'
 import {Shop} from './component/Shop/Shop'
 import {About} from './component/About/About'
 import {Contact} from './component/Contact/contact'
-import {AddProduct} from './component/Admin/addProduct'
+import {AddProduct} from './component/Admin/AddProduct'
 import Payment from "./component/payment/Payment"
 import { UpdateProduct } from './component/Admin/UpdateProduct';
 function App() {
