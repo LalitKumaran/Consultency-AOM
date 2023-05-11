@@ -12,12 +12,12 @@ export function Home() {
       img: 'assets/image/pngeggg (8).png',
     },
     {
-      tag1: 'fresh and organic',
+      tag1: 'Limited Deal',
       tag2: 'upto 50% off',
       img: 'assets/image/pngegg (8).png',
     },
     {
-      tag1: 'fresh and organic',
+      tag1: 'Make your food more Delicious',
       tag2: 'upto 50% off',
       img: 'assets/image/pngegg (9).png',
     },

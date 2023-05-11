@@ -4,7 +4,7 @@ import navbar_styles from './navbar.module.css'
 // import {Navbar,Nav,Form} from 'react-bootstrap'
 import {FaBars,FaSearch,FaShoppingCart,FaUser} from 'react-icons/fa'
 import {BsDroplet} from 'react-icons/bs'
-import logo from '../../../images/logo1.png'
+import logo from '../../../images/logo1.gif'
 import {Login} from './Login'
 import {Cart} from './Cart/Cart'
 

@@ -4,6 +4,7 @@ import contact_styles from './contact.module.css'
 import {Container} from 'react-bootstrap'
 import {FaPhone,FaEnvelope,FaMapMarkerAlt} from 'react-icons/fa'
 import emailjs from "@emailjs/browser"
+
 export function Contact(){
     const form = useRef();
 

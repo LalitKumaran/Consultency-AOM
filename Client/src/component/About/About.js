@@ -2,6 +2,7 @@ import about_styles from './about.module.css'
 import {NavLink} from 'react-router-dom'
 import {Container} from 'react-bootstrap'
 import {FaEye,FaHeart,FaShareAlt} from 'react-icons/fa'
+import logo from '../../images/logo1.gif'
 
 export const About = () => {
     return (
@@ -9,23 +10,44 @@ export const About = () => {
         
     <div className={about_styles.about}>
     <h1 className={about_styles.title}> our <span>Shop</span> </h1>
-    
-
+     
+ <div className={about_styles.image}>
+        <img src={logo} alt=""/> 
     <div className={about_styles.boxcontainer}>
-
-    <div className={about_styles.image}>
-        <img src="/assets/image/pngegg (8).png" alt=""/>
-    </div>
+</div>
+    
+    </div> 
 
     <div className={about_styles.content}>
         <span>welcome to our shop</span>
         <h3>fresh and organic groceries</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vel sequi nostrum quae nobis non quaerat nisi voluptatibus recusandae reprehenderit tempore eligendi, eum quibusdam perferendis dicta, incidunt dolores nemo ex.</p>
+        <p>Aruna Oil Mill is a renowned oil production company located in Erode, Tamil Nadu. Established in 1990, the company has been producing high-quality coconut, sesame, and refined oil for over three decades. The company is known for its commitment to quality and customer satisfaction, making it a popular choice among consumers.
+
+The production process at Aruna Oil Mill is highly sophisticated and efficient. For coconut oil production, the company uses the traditional cold-pressed method, which involves grinding the fresh coconut meat and then pressing it to extract the oil. This method ensures that the oil retains its natural nutrients and flavor. The company sources the best quality coconuts from local farmers to ensure that the final product is of the highest quality.
+
+For sesame oil production, Aruna Oil Mill uses the traditional wooden churner method, which involves roasting the sesame seeds and then grinding them into a paste using a wooden churner. The paste is then pressed to extract the oil, which is carefully filtered and bottled. This method of production ensures that the oil retains its distinctive nutty flavor and aroma.
+
+For refined oil production, the company uses a modern refining process that involves filtering and bleaching the oil to remove any impurities and improve its stability. The refined oil is then carefully packaged to maintain its freshness and quality.
+
+One of the key reasons for the success of Aruna Oil Mill is its focus on quality and customer satisfaction. The company sources the best quality raw materials and uses state-of-the-art production techniques to ensure that its products are of the highest quality. The company also has a dedicated quality control team that monitors the production process at every stage to ensure that the final product meets the highest standards.
+
+Over the years, Aruna Oil Mill has built a strong reputation for its quality products and excellent customer service. The company has a large customer base both in India and overseas, and its products are known for their superior quality and flavor. The company also has a strong distribution network, which ensures that its products reach customers in a timely and efficient manner.
+
+In conclusion, Aruna Oil Mill is a leading oil production company that has been producing high-quality coconut, sesame, and refined oil for over three decades. The company's focus on quality and customer satisfaction has helped it build a strong reputation and a loyal customer base. With its commitment to innovation and excellence, Aruna Oil Mill is poised for continued success in the years to come.
+Aruna Oil Mill not only produces high-quality coconut, sesame, and refined oils but also offers wholesale dealing to businesses. The company has a wide network of distributors and suppliers, making it easier for them to supply their products to various parts of the country. Aruna Oil Mill understands the importance of timely delivery and has established a smooth supply chain process to ensure their products reach their customers on time.
+
+Wholesale buyers can order large quantities of oils directly from Aruna Oil Mill at competitive prices. The company offers flexible pricing options to suit the needs of different businesses. They also have a dedicated team of customer service professionals who provide excellent support and assist with any queries.
+
+Aruna Oil Mill's commitment to quality is evident in their production process and product packaging. The oils are carefully extracted and processed under strict quality control measures to ensure consistency and purity. The company uses modern machinery and technology to improve efficiency and quality while maintaining traditional methods of oil production.
+
+Furthermore, Aruna Oil Mill takes sustainability seriously and ensures that their production processes are environmentally friendly. They use eco-friendly methods of waste disposal and energy conservation measures to reduce their carbon footprint.
+
+In conclusion, Aruna Oil Mill has been producing high-quality coconut, sesame, and refined oils for over three decades and has established itself as a trusted brand in the market. Their commitment to quality, sustainability, and excellent customer service has helped them to expand their reach and offer wholesale dealing to businesses.</p>
         {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem cumque molestiae blanditiis deleniti aspernatur, ab tempora quisquam sapiente commodi hic.</p> */}
         <a href="#" className={about_styles.btn}>read more</a>
     </div>
     </div>
-</div>
+{/* </div> */}
 
 <div className={about_styles.gallery}>
 
