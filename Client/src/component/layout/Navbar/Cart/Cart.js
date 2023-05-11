@@ -47,7 +47,7 @@ export const Cart = () => {
         if(user){
              load()
         }
-    },[cart])
+    },[])
 
     return (
         <>
@@ -76,7 +76,12 @@ export const Cart = () => {
         )}
         <h3 className={cart_styles.total}> total : <span>{carttotal}</span> </h3>
         <Button onClick={checkout} className={cart_styles.btn}>checkout cart</Button>
-    </div>: <></> ): <Login/> }</>
+    </div>: <div className={`${cart_styles.shopping_cart} active`}>
+     <div className={cart_styles.box}>
+            <div className={cart_styles.content}>
+                <h3>Cart Empty</h3>
+            </div>
+        </div> </div>):  <Login/> }</>
         
     )
 } 

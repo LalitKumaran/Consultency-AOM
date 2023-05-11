@@ -43,9 +43,9 @@ catch(error){
 
 const getCart = async (req,res) => {
     try{
-    console.log(req)
+    // console.log(req)
     const {uid} = req.body
-    console.log(uid)
+    // console.log(uid)
     const usercart = await cartModel.findOne({user:uid})
     console.log(usercart)
     if(usercart){
@@ -106,4 +106,41 @@ const removeItem = async(req,res)=> {
         })
     }
 }
-module.exports = {addItem,getCart,removeItem};
+const checkoutCart = async(req,res)=> {
+    console.log("server",req.body)
+
+    try{
+        const {uid}  = req.body
+
+
+        const usercart = await cartModel.findOne({user:uid})
+
+        if(usercart){
+            await cartModel.updateOne({ user: uid }, {products:[]});
+
+            const updatedCart = await cartModel.findOne({ user: uid });
+
+              res.status(200).send({
+                success:true,
+                message:"Checked out successfully",
+                updatedCart
+              })
+        }
+        else{
+            res.status(304).send({
+                success:false,
+                message:"Cart doesn't exists",
+            })
+        }
+
+    }
+    catch{
+        res.status(500).send({
+            success:false,
+            message:"Internal Error",
+            error
+        })
+    }
+}
+
+module.exports = {addItem,getCart,removeItem,checkoutCart};

@@ -1,26 +1,33 @@
 const productModel = require('../models/productModel')
-
+const mongoose = require('mongoose')
 const addProduct = async (req,res) => {
     try{
         console.log("New Product")
-        const {name,description,price,category,image} = req.body
-        console.log(req.body)
+        const url = req.protocol + '://' + req.get('host')
+        console.log(url)
+        console.log("body",req.body)
+        console.log("file",req.file)
+        
+        const newproduct = new productModel({
+            _id: new mongoose.Types.ObjectId(),
+            name: req.body.name,
+            description: req.body.description,
+            price : req.body.price,
+            category : req.body.category,
+            image : url + '/public/' + req.file.filename
+        });
 
-        const product = await new productModel({name,description,price,category,image}).save()
-
-        if(product){
-            res.status(201).send({
-                success:true,
-                message:"Product added Successfully",
-                product,
-            })
-        }
-        else{
-            res.status(404).send({
-                success:false,
-                message:"Error",
-            })
-        }
+        console.log(newproduct)
+        
+        newproduct.save().then((res)=>{res.status(201).send({
+            success:true,
+            message:"Product added Successfully",
+            newproduct,
+        })}).catch((err)=>{res.status(404).send({
+            success:false,
+            message:"Error",
+            err,
+        })})
         
     }
     catch(error){
@@ -32,6 +39,35 @@ const addProduct = async (req,res) => {
         })
     }
     
+}
+const updateproduct=async(req,res)=>
+{
+    try{
+        const pid=req.body.pid
+        console.log(req.body)
+        const product =await productModel.find({_id:pid})
+        if(product)
+        {
+            await productModel.updateOne({ _id: pid }, { name:req.body.name , description:req.body.description,price:req.params.price});
+            res.status(201).send({
+                success:true,
+                message:"Product updated Successfully",
+                product,
+            })
+
+        }
+        else{
+            res.send("not found")
+        }
+    }
+    catch(error){
+        console.log(error)
+        res.status(500).send({
+            success:false,
+            message:'Error in getting Product',
+            error
+        })
+    }
 }
 
 const getProduct = async (req,res) => {
@@ -84,4 +120,4 @@ const allProducts = async (req,res) => {
 } 
 
 
-module.exports = {addProduct,getProduct,allProducts};
+module.exports = {addProduct,getProduct,allProducts,updateproduct};

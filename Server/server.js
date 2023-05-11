@@ -1,10 +1,16 @@
 const express = require("express");
 const app = express();
 const path = require('path')
+const bodyParser = require('body-parser');
 app.use(express.json({limit: '50mb'}));
 
 const core = require('cors')
 app.use(core())
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
 // Handling Uncaught Exception
 process.on("uncaughtException", (err) => {

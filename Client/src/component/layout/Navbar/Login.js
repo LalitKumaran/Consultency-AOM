@@ -22,6 +22,7 @@ export const Login = () => {
                 setUser(res.data.user);
                 localStorage.setItem('user',JSON.stringify(res.data.user))
             }
+            window.location.reload()
             toast.success(res.data.message)
         }).catch((err)=>{console.log(err)})
     }
@@ -34,6 +35,7 @@ export const Login = () => {
 
     const logout = () => {
         localStorage.clear()
+        window.location.reload()
         setUser()
     }
 

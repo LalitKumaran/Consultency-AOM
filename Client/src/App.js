@@ -9,8 +9,9 @@ import {Products} from './component/Products/Products'
 import {Shop} from './component/Shop/Shop'
 import {About} from './component/About/About'
 import {Contact} from './component/Contact/contact'
-import {AddProduct} from './component/Admin/new'
+import {AddProduct} from './component/Admin/addProduct'
 import Payment from "./component/payment/Payment"
+import { UpdateProduct } from './component/Admin/UpdateProduct';
 function App() {
   const [user,setUser] = useState(JSON.parse(localStorage.getItem('user')))
   return (
@@ -29,6 +30,7 @@ function App() {
       <Route path='/contact' element={<Contact/>}></Route> 
       <Route path="/admin/newproduct" element={<AddProduct/>}></Route>
       <Route path="/payment" element={<Payment/>}></Route>
+      <Route path="/admin/update" element={<UpdateProduct/>}></Route>
 
     </Routes>
     </main>
