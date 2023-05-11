@@ -1,5 +1,5 @@
 const express = require('express')
-const {addProduct,getProduct,allProducts,updateproduct} = require('../controllers/productController.js')
+const {addProduct,getProduct,allProducts,updateProduct,deleteProduct} = require('../controllers/productController.js')
 const router = express.Router()
 const multer = require('multer')
 let uuidv4 = require('uuid/v4')
@@ -33,6 +33,8 @@ router.get('/find/:pid',getProduct);
 
 router.get('/all',allProducts);
 
-router.put('/admin/update',updateproduct)
+router.put('/admin/update',updateProduct)
+
+router.put('/delete/:pid',deleteProduct)
 
 module.exports = router;

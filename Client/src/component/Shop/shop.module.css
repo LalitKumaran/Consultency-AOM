@@ -108,7 +108,7 @@ html {
   color: #666;
 }
 .category .boxcontainer .box:hover h3 {
-  color: #ffd700;
+  /* color: #ffd700; */
 }
 .shop{
   padding: 3rem 9%;
@@ -178,7 +178,13 @@ html {
   padding: 1rem 0;
 }
 .shop .box
-container .box .content .stars i {
+  container .box .content .stars i {
   font-size: 1.7rem;
   color: #ffd700;
+}
+.delete{
+  color : red;
+}
+.edit{
+  color : green;
 }

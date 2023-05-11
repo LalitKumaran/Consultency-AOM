@@ -9,7 +9,6 @@ const addProduct = async (req,res) => {
         console.log("file",req.file)
         
         const newproduct = new productModel({
-            _id: new mongoose.Types.ObjectId(),
             name: req.body.name,
             description: req.body.description,
             price : req.body.price,
@@ -41,21 +40,21 @@ const addProduct = async (req,res) => {
     }
     
 }
-const updateproduct=async(req,res)=>
+const updateProduct = async(req,res) =>
 {
     try{
-        const pid=req.body.pid
+        const {pid,name,description,price,category,image} = req.body
         console.log(req.body)
-        const product =await productModel.find({_id:pid})
+        const product = await productModel.find({_id:pid})
+        console.log(product)
         if(product)
         {
-            await productModel.updateOne({ _id: pid }, { name:req.body.name , description:req.body.description,price:req.params.price});
+            await productModel.updateOne({ _id: pid }, { name: name , description: description , category: category , price: price , image: image});
             res.status(201).send({
                 success:true,
                 message:"Product updated Successfully",
                 product,
             })
-
         }
         else{
             res.send("not found")
@@ -101,6 +100,39 @@ const getProduct = async (req,res) => {
     
 }
 
+const deleteProduct = async (req,res) => {
+    try{
+        const pid = req.params.pid
+        console.log("pid:",pid)
+        const product  = await productModel.findOne({_id:pid})
+        console.log("fd",product)
+            if(!product){
+                return res.status(404).send({
+                    success:false,
+                    message:'Product not found',
+                })
+            }
+            else{
+                await productModel.deleteOne({_id:pid})
+                res.status(201).send({
+                    success:true,
+                    message:"Product Deleted Succesfully",
+                    product,
+                })
+            } 
+    }
+    catch(error){
+        console.log(error)
+        res.status(500).send({
+            success:false,
+            message:'Error in getting Product',
+            error
+        })
+    }
+    
+}
+
+
 const allProducts = async (req,res) => {
    try{
     const products = await productModel.find()
@@ -121,4 +153,4 @@ const allProducts = async (req,res) => {
 } 
 
 
-module.exports = {addProduct,getProduct,allProducts,updateproduct};
+module.exports = {addProduct,getProduct,allProducts,updateProduct,deleteProduct};

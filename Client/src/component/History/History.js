@@ -1,0 +1,1 @@
+import history_styles from '../History/history.module.css'

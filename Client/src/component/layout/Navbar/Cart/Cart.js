@@ -68,6 +68,7 @@ export const Cart = () => {
             <FaTimes onClick={()=>removeItem(c._id.toString())} className={cart_styles.fatimes}/>
             <div className={cart_styles.content}>
                 <h3>{c.name}</h3>
+                {/* <img src={c.image} alt=""></img> */}
                 <span className={cart_styles.quantity}>1</span>
                 <span className={cart_styles.multiply}>x</span>
                 <span className={cart_styles.price}>Rs.{c.price}</span>

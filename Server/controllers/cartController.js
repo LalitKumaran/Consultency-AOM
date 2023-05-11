@@ -1,6 +1,7 @@
 const cartModel = require('../models/cartModel')
 const productModel = require('../models/productModel')
 const userModel = require('../models/userModel')
+const historyModel = require('../models/historyModel')
 
 const addItem = async(req,res) => {
     try{
@@ -108,16 +109,21 @@ const removeItem = async(req,res)=> {
 }
 const checkoutCart = async(req,res)=> {
     console.log("server",req.body)
-
     try{
         const {uid}  = req.body
 
-
         const usercart = await cartModel.findOne({user:uid})
 
-        if(usercart){
-            await cartModel.updateOne({ user: uid }, {products:[]});
+        const userhistory = await historyModel.findOne({user:uid})
 
+        if(!userhistory){
+            await new historyModel({user:uid},{products:[]}).save()
+        }
+
+        if(usercart){
+            console.log(usercart.products)
+            await historyModel.updateOne({ user: uid }, {$addToSet:{history:usercart.products}},{upsert:true})
+            await cartModel.updateOne({ user: uid }, {products:[]});
             const updatedCart = await cartModel.findOne({ user: uid });
 
               res.status(200).send({

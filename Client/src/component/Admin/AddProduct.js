@@ -25,6 +25,8 @@ export const AddProduct = () => {
     }   
     return (
         <Container className={addproduct_styles.container}>
+            <h1 className={addproduct_styles.title}>New <span>Product</span></h1>
+
         <Form onSubmit={add} className={addproduct_styles.form}>
             <Form.Group className={addproduct_styles.formgroup}>
             <Form.Label className={addproduct_styles.formlabel}>Name</Form.Label>
