@@ -61,6 +61,7 @@ html {
   flex-wrap: wrap;
   /* grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); */
   gap: 1.5rem;
+  justify-content: space-around;
 
 }
 .category{
