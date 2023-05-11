@@ -10,6 +10,7 @@ import {Shop} from './component/Shop/Shop'
 import {About} from './component/About/About'
 import {Contact} from './component/Contact/contact'
 import {AddProduct} from './component/Admin/AddProduct'
+import {History} from './component/History/History'
 import Payment from "./component/payment/Payment"
 import { UpdateProduct } from './component/Admin/UpdateProduct';
 function App() {
@@ -30,6 +31,12 @@ function App() {
       <Route path='/contact' element={<Contact/>}></Route> 
       <Route path="/admin/newproduct" element={<AddProduct/>}></Route>
       <Route path="/payment" element={<Payment/>}></Route>
+      <Route path="/history" element={<History/>}></Route>
+      <Route path="/termsofuse" element={<></>}></Route>
+      <Route path="/privacypolicy" element={<></>}></Route>
+      <Route path="/facebook" element={<></>}></Route>
+      <Route path="/instagram" element={<></>}></Route>
+      <Route path="/twitter" element={<></>}></Route>
       <Route path="/admin/update" element={<UpdateProduct/>}></Route>
 
     </Routes>

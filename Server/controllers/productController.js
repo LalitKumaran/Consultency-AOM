@@ -105,7 +105,6 @@ const deleteProduct = async (req,res) => {
         const pid = req.params.pid
         console.log("pid:",pid)
         const product  = await productModel.findOne({_id:pid})
-        console.log("fd",product)
             if(!product){
                 return res.status(404).send({
                     success:false,

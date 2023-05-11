@@ -25,7 +25,7 @@ const historySchema = new mongoose.Schema({
         required : true,
         unique: true
     },
-    history : [[productSchema]]
+    orders : [[productSchema]]
 })
 
 module.exports = mongoose.model('history',historySchema);

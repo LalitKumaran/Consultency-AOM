@@ -82,6 +82,7 @@ export const Login = () => {
         <input type="submit" value="Register" className={login_styles.btn}/>
         <p>Already have an account? <a onClick={viewregister} href='#login'>Login</a></p>
       </form>
+      
         
         :   user ?
 

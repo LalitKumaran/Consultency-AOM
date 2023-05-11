@@ -122,7 +122,7 @@ const checkoutCart = async(req,res)=> {
 
         if(usercart){
             console.log(usercart.products)
-            await historyModel.updateOne({ user: uid }, {$addToSet:{history:usercart.products}},{upsert:true})
+            await historyModel.updateOne({ user: uid }, {$addToSet:{orders:usercart.products}},{upsert:true})
             await cartModel.updateOne({ user: uid }, {products:[]});
             const updatedCart = await cartModel.findOne({ user: uid });
 
@@ -149,4 +149,29 @@ const checkoutCart = async(req,res)=> {
     }
 }
 
-module.exports = {addItem,getCart,removeItem,checkoutCart};
+const orderHistory = async (req,res) => {
+    const uid = req.params.uid
+
+    const user = await userModel.findOne({email:uid})
+
+    console.log(user)
+
+    if(user){
+        const userHistory = await historyModel.findOne({user:uid})
+
+        console.log(userHistory)
+        res.status(200).send({
+            success:true,
+            message:"Order history gathered",
+            history: userHistory.orders
+        })
+    }
+    else{
+        res.status(404).send({
+            success:false,
+            message:"User Not Found",
+        })
+    }
+}
+
+module.exports = {addItem,getCart,removeItem,checkoutCart,orderHistory};

@@ -89,3 +89,16 @@ html {
   .loginform p a:hover {
     text-decoration: underline;
   }
+  .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    background: #ffd700;
+    color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: #222;
+  }
+  

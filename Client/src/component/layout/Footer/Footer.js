@@ -1,35 +1,39 @@
 import React from 'react'
 import footer_styles from './footer.module.css'
+import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 import {} from 'react-bootstrap'
 import {FaArrowRight,FaFacebook,FaTwitter,FaInstagram,FaLinkedin} from 'react-icons/fa'
 export function Footer(){
+    const navigate = useNavigate()
+    const [user,setUser] = useState(JSON.parse(localStorage.getItem('user')))
     return (
+        
         <div className={footer_styles.footer}>
 
             <div className={footer_styles.boxcontainer}>
 
                 <div className={footer_styles.box}>
                     <h3>quick links</h3>
-                    <a href="home.html"> <i><FaArrowRight/></i> Home</a>
-                    <a href="shop.html"> <i><FaArrowRight/></i> Shop</a>
-                    <a href="about.html"> <i><FaArrowRight/></i> About</a>
-                    <a href="contact.html"> <i><FaArrowRight/></i> Contact</a>
+                    <a href="/"> <i><FaArrowRight/></i> Home</a>
+                    <a href="/shop"> <i><FaArrowRight/></i> Shop</a>
+                    <a href="/about"> <i><FaArrowRight/></i> About</a>
+                    <a href="/contact"> <i><FaArrowRight/></i> Contact</a>
                 </div>
 
                 <div className={footer_styles.box}>
                     <h3>extra links</h3>
-                    <a href="#"> <i><FaArrowRight/></i> My order </a>
-                    <a href="#"> <i><FaArrowRight/></i> My favorite </a>
-                    {/* <a href="#"> <i><FaArrowRight/></i> My wishlist </a> */}
-                    <a href="#"> <i><FaArrowRight/></i> My account </a>
-                    <a href="#"> <i><FaArrowRight/></i> Terms or use </a>
+                    {user?
+                    <><a href="/history"> <i><FaArrowRight/></i> My orders </a></>:<></>}
+                    <a href="/privacypolicy"> <i><FaArrowRight/></i> Privacy Policy </a>
+                    <a href="/termsofuse"> <i><FaArrowRight/></i> Terms of use </a>
                 </div>
 
                 <div className={footer_styles.box}>
                     <h3>follow us</h3>
-                    <a href="#"> <i><FaFacebook/></i> Facebook </a>
-                    <a href="#"> <i><FaInstagram/></i> Instagram</a>
-                    <a href="#"> <i><FaTwitter/></i> Twitter </a>
+                    <a href="/facebook"> <i><FaFacebook/></i> Facebook </a>
+                    <a href="/instagram"> <i><FaInstagram/></i> Instagram</a>
+                    <a href="/twitter"> <i><FaTwitter/></i> Twitter </a>
                 </div>
 
                 <div className={footer_styles.box}>
