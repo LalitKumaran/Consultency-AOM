@@ -13,8 +13,7 @@ const productSchema = new mongoose.Schema({
         required : true,
     },
     image : {
-        data : Buffer,
-        contentType : String,
+        type : String,
     }
 })
 
@@ -25,6 +24,10 @@ const cartSchema = mongoose.Schema({
         unique : true
     },
     products : [productSchema],
+    amount : {
+        type : Number,
+        default : 0
+    }
 })
 
 module.exports = mongoose.model("cart",cartSchema);

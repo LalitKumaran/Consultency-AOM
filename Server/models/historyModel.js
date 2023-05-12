@@ -14,8 +14,16 @@ const productSchema = new mongoose.Schema({
         required : true,
     },
     image : {
-        data : Buffer,
-        contentType : String,
+        type : String,
+    }
+})
+
+const tempcartSchema = new mongoose.Schema({
+    products : [productSchema],
+
+    amount : {
+        type : Number,
+        default : 0
     }
 })
 
@@ -25,7 +33,7 @@ const historySchema = new mongoose.Schema({
         required : true,
         unique: true
     },
-    orders : [[productSchema]]
+    orders : [[tempcartSchema]]
 })
 
 module.exports = mongoose.model('history',historySchema);

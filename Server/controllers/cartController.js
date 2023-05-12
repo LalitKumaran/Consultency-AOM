@@ -18,7 +18,8 @@ const addItem = async(req,res) => {
     const product = await productModel.findOne({_id:pid})
 
         if(product){
-            const cart = await cartModel.updateOne({user:uid},{$addToSet:{products:product}},{upsert:true})
+            var amt = usercart.amount+product.price
+            const cart = await cartModel.updateOne({user:uid},{$addToSet:{products:product}},{upsert:true},{amount:amt})
             res.status(201).send({
                 success:true,
                 message:"Added to cart",
@@ -163,7 +164,7 @@ const orderHistory = async (req,res) => {
         res.status(200).send({
             success:true,
             message:"Order history gathered",
-            history: userHistory.orders
+            history: userHistory
         })
     }
     else{

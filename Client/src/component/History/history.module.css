@@ -71,11 +71,10 @@ html {
   text-align: center;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   padding: 10px;
-  width: 500px;
-  height : 450px; 
+  width: auto;
+  height : auto; 
   margin-top: 20px;
-
-  
+  background-color: #ffd700;
 }
 .category .boxcontainer .box .qty{
     padding: auto;
@@ -109,6 +108,14 @@ html {
 }
 .category .boxcontainer .box:hover h3 {
   /* color: #ffd700; */
+}
+.cart {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  width: 35rem;
+  padding: 2rem;
+  transition: 0.4s linear;
 }
    .cartbox {
     display: flex;
