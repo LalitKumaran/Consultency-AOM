@@ -86,3 +86,14 @@ html {
   text-align: center;
   width: 100%;
 }
+.shopping_cart p {
+  color: #666;
+  padding-top: 0.7rem;
+  font-size: 1.4rem;
+}
+.shopping_cart p a {
+  color: #ffd700;
+}
+.shopping_cart p a:hover {
+  text-decoration: underline;
+}

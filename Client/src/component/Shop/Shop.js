@@ -1,20 +1,36 @@
-import {useState,useEffect} from 'react'
+import {useState,useEffect,useRef} from 'react'
 import shop_styles from './shop.module.css'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import {Container,Card,Button} from 'react-bootstrap' 
 import {FaEdit} from 'react-icons/fa'
+import {MdDeleteForever} from 'react-icons/md'
 import { UpdateProduct } from '../Admin/UpdateProduct'
-import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
+import Dialog from "../Admin/Dialog";
 export const Shop = () => {
+
+    const Navigate=useNavigate()
 
     const [products,setProducts] = useState([])
 
     const [filter,setFilter] = useState([])
 
     const [user,setUser] = useState(JSON.parse(localStorage.getItem('user')))
-    const Navigate=useNavigate()
+
+    async function handleDelete(pid){
+        console.log("ddfd",pid)
+        // const del = window.confirm("Are you sure to delete the product?")
+        // if(del){
+            await axios.put(`/api/product/delete/${pid}`).then((res)=>{
+                console.log("response",res)
+                toast.success(res.message)
+                load()
+            }).catch((err)=>{console.log(err)})
+        // }
+        
+    };
+
     // const [state,setState] =useState({"wholesale":false,"retail":false})
 
     // const [quantity,setQuantity] = useState({})
@@ -44,7 +60,7 @@ export const Shop = () => {
             }).catch((err)=>{console.log(err)})
         }     
     }
-    
+
     // const incqty = (id) => {
     //     const newQuant = [...quantity];
     //     newQuant[id] += 1;
@@ -84,12 +100,10 @@ export const Shop = () => {
             {filter.map((p,index)=>
                 <Card key={index} className={shop_styles.box}>
                     
-                    {user &&user.role===1 ? <FaEdit onClick={function()
-                    {
-                        Navigate("/admin/update",{state:{amount:p}})
-                    }
-                       
-                 } />:<></>}
+                    {user &&user.role===1 ? <><FaEdit size={30} className={shop_styles.edit} onClick={()=>{
+                        Navigate("/admin/update",{state:{product:p}})
+                    }}/> 
+                    <MdDeleteForever className={shop_styles.delete} size={30} onClick={()=>handleDelete(p._id)}/></>:<></>}
                 <Card.Title><h3>{p.name}</h3></Card.Title>
                 <h6>{p.description}</h6>
                 <Card.Body>
@@ -99,7 +113,7 @@ export const Shop = () => {
                     <Button className={shop_styles.qtybtn}>-</Button>
                     <input type="text" min='0' defaultValue="1"></input>
                     <Button className={shop_styles.qtybtn}>+</Button>
-                    </h3> */}
+                    </h3> */console.log(p._id)}
                     <Button onClick={()=>addtocart(p._id.toString())} className={shop_styles.btn}>Add to Cart</Button>
                 </Card.Body>
                 </Card>

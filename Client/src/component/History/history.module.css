@@ -71,11 +71,10 @@ html {
   text-align: center;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   padding: 10px;
-  width: 500px;
-  height : 450px; 
+  width: auto;
+  height : auto; 
   margin-top: 20px;
-
-  
+  background-color: #ffd700;
 }
 .category .boxcontainer .box .qty{
     padding: auto;
@@ -110,81 +109,56 @@ html {
 .category .boxcontainer .box:hover h3 {
   /* color: #ffd700; */
 }
-.shop{
-  padding: 3rem 9%;
-}
-.shop .box-container {
-  padding: 3rem 9%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 1.5rem;
-}
-.shop .boxcontainer .box {
-  position: relative;
-  background: #f3f3f3;
-  text-align: center;
-  overflow: hidden;
-
-}
-.shop .boxcontainer .box:hover .icons {
-  top: 0;
-}
-.shop .boxcontainer .box .icons {
-  position: absolute;
-  top: -105%;
-  left: 0;
-  height: 30rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(243, 243, 243, 0.8);
-  gap: 1rem;
-}
-.shop .boxcontainer .box .icons a {
-  font-size: 2rem;
-  height: 5rem;
-  width: 5rem;
-  line-height: 5rem;
+.cart {
   background: #fff;
+  border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  color: #666;
+  width: 35rem;
+  padding: 2rem;
+  transition: 0.4s linear;
 }
-.shop .boxcontainer .box .icons a:hover {
-  background: #ffd700;
-  color: #fff;
-}
-.shop .boxcontainer .box .image {
-  height: 30rem;
-  width: 100%;
-  overflow: hidden;
-}
-.shop .boxcontainer .box .image img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.shop .boxcontainer .box .content {
-  padding: 1.5rem;
-}
-.shop .box-container .box .content h3 {
-  font-size: 2rem;
-  color: #222;
-}
-.shop .boxcontainer .box .content .price {
-  font-size: 2rem;
-  color: #222;
-  padding: 1rem 0;
-}
-.shop .box
-  container .box .content .stars i {
-  font-size: 1.7rem;
-  color: #ffd700;
-}
-.delete{
-  color : red;
-}
-.edit{
-  color : green;
-}
+   .cartbox {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+    .cartbox img {
+    height: 10rem;
+  }
+    .cartbox .cartcontent h3 {
+    font-size: 1.7rem;
+    padding-bottom: 0.5rem;
+    color: #222;
+  }
+    .cartbox .cartcontent span {
+    font-size: 1.5rem;
+    color: #666;
+  }
+   .cartbox .cartcontent span.multiply {
+    margin: 0 0.5rem;
+  }
+   .total {
+    color: #666;
+    text-align: center;
+    font-size: 2.2rem;
+  }
+   .total span {
+    color: #222;
+  }
+    .btn {
+    text-align: center;
+    width: 100%;
+  }
+   p {
+    color: #666;
+    padding-top: 0.7rem;
+    font-size: 1.4rem;
+  }
+  p a {
+    color: #ffd700;
+  }
+  p a:hover {
+    text-decoration: underline;
+  }

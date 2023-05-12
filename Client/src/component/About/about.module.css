@@ -54,6 +54,7 @@ html {
 
 
 .about {
+    padding: 2rem 0%;
     margin: 0.5rem 9%; 
     gap: 1.5rem;
   }

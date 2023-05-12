@@ -68,6 +68,7 @@ export const Cart = () => {
             <FaTimes onClick={()=>removeItem(c._id.toString())} className={cart_styles.fatimes}/>
             <div className={cart_styles.content}>
                 <h3>{c.name}</h3>
+                {/* <img src={c.image} alt=""></img> */}
                 <span className={cart_styles.quantity}>1</span>
                 <span className={cart_styles.multiply}>x</span>
                 <span className={cart_styles.price}>Rs.{c.price}</span>
@@ -76,10 +77,13 @@ export const Cart = () => {
         )}
         <h3 className={cart_styles.total}> total : <span>{carttotal}</span> </h3>
         <Button onClick={checkout} className={cart_styles.btn}>checkout cart</Button>
+        <Button onClick={()=>{navigate('/history')}} className={cart_styles.btn}>My Orders</Button>
+        {/* <p>Order History? <a href='#pwd'>History</a></p> */}
     </div>: <div className={`${cart_styles.shopping_cart} active`}>
      <div className={cart_styles.box}>
             <div className={cart_styles.content}>
                 <h3>Cart Empty</h3>
+                <Button onClick={()=>{navigate('/history')}} className={cart_styles.btn}>My Orders</Button>
             </div>
         </div> </div>):  <Login/> }</>
         

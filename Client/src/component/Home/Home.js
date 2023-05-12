@@ -62,7 +62,7 @@ export function Home() {
         {/* <FaArrowRight className={home_styles.nextslide} onClick={next} /> */}
         {/* <FaArrowLeft className={home_styles.prevslide} onClick={prev}/> */}
       </div>
-      <Products />
+      <Products id="#products"/>
     </>
   );
 }

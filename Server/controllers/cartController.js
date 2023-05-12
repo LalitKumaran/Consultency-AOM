@@ -1,6 +1,7 @@
 const cartModel = require('../models/cartModel')
 const productModel = require('../models/productModel')
 const userModel = require('../models/userModel')
+const historyModel = require('../models/historyModel')
 
 const addItem = async(req,res) => {
     try{
@@ -17,7 +18,8 @@ const addItem = async(req,res) => {
     const product = await productModel.findOne({_id:pid})
 
         if(product){
-            const cart = await cartModel.updateOne({user:uid},{$addToSet:{products:product}},{upsert:true})
+            var amt = usercart.amount+product.price
+            const cart = await cartModel.updateOne({user:uid},{$addToSet:{products:product}},{upsert:true},{amount:amt})
             res.status(201).send({
                 success:true,
                 message:"Added to cart",
@@ -108,16 +110,21 @@ const removeItem = async(req,res)=> {
 }
 const checkoutCart = async(req,res)=> {
     console.log("server",req.body)
-
     try{
         const {uid}  = req.body
 
-
         const usercart = await cartModel.findOne({user:uid})
 
-        if(usercart){
-            await cartModel.updateOne({ user: uid }, {products:[]});
+        const userhistory = await historyModel.findOne({user:uid})
 
+        if(!userhistory){
+            await new historyModel({user:uid},{products:[]}).save()
+        }
+
+        if(usercart){
+            console.log(usercart.products)
+            await historyModel.updateOne({ user: uid }, {$addToSet:{orders:usercart.products}},{upsert:true})
+            await cartModel.updateOne({ user: uid }, {products:[]});
             const updatedCart = await cartModel.findOne({ user: uid });
 
               res.status(200).send({
@@ -143,4 +150,29 @@ const checkoutCart = async(req,res)=> {
     }
 }
 
-module.exports = {addItem,getCart,removeItem,checkoutCart};
+const orderHistory = async (req,res) => {
+    const uid = req.params.uid
+
+    const user = await userModel.findOne({email:uid})
+
+    console.log(user)
+
+    if(user){
+        const userHistory = await historyModel.findOne({user:uid})
+
+        console.log(userHistory)
+        res.status(200).send({
+            success:true,
+            message:"Order history gathered",
+            history: userHistory
+        })
+    }
+    else{
+        res.status(404).send({
+            success:false,
+            message:"User Not Found",
+        })
+    }
+}
+
+module.exports = {addItem,getCart,removeItem,checkoutCart,orderHistory};

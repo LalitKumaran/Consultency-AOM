@@ -1,4 +1,5 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
+
 const productSchema = new mongoose.Schema({
     name : {
         type : String,
@@ -17,17 +18,22 @@ const productSchema = new mongoose.Schema({
     }
 })
 
-const cartSchema = mongoose.Schema({
-    user : {
-        type : String,
-        required : true,
-        unique : true
-    },
+const tempcartSchema = new mongoose.Schema({
     products : [productSchema],
+
     amount : {
         type : Number,
         default : 0
     }
 })
 
-module.exports = mongoose.model("cart",cartSchema);
+const historySchema = new mongoose.Schema({
+    user : {
+        type : String,
+        required : true,
+        unique: true
+    },
+    orders : [[tempcartSchema]]
+})
+
+module.exports = mongoose.model('history',historySchema);
