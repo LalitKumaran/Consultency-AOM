@@ -4,7 +4,10 @@ import { Banner } from './Banner';
 import { Products } from '../Products/Products';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
+ 
+
 export function Home() {
+  
   const [carouselList, setCarouselList] = useState([
     {
       tag1: 'fresh and organic',

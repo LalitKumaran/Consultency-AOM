@@ -75,8 +75,8 @@ export function Contact(){
         </form>
 
         <iframe className={contact_styles.map}  allowfullscreen="" loading="lazy"></iframe>
-        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.657374356943!2d77.69743591447121!3d11.359717291927344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9695a39160b07%3A0x8dbe2d60d40dbbda!2sARUNA%20OIL%20MILL!5e0!3m2!1sen!2sin!4v1679565799306!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.8136990222456!2d77.71238272095333!3d11.348314366138949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f372bceaabd%3A0x721207df225e38c6!2sAruna%20Oil%20Mill!5e0!3m2!1sen!2sin!4v1679565982567!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.657374356943!2d77.69743591447121!3d11.359717291927344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9695a39160b07%3A0x8dbe2d60d40dbbda!2sARUNA%20OIL%20MILL!5e0!3m2!1sen!2sin!4v1679565799306!5m2!1sen!2sin" width="600" height="450" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.8136990222456!2d77.71238272095333!3d11.348314366138949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f372bceaabd%3A0x721207df225e38c6!2sAruna%20Oil%20Mill!5e0!3m2!1sen!2sin!4v1679565982567!5m2!1sen!2sin" width="600" height="450" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     </div>
 

@@ -199,3 +199,9 @@ html {
     color: #666;
     line-height: 2;
   }
+
+  .map {
+    flex: 1 1 40rem;
+    width: 100%;
+  }
+  

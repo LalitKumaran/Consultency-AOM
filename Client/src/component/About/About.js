@@ -1,8 +1,9 @@
 import about_styles from './about.module.css'
 import {NavLink} from 'react-router-dom'
-import {Container} from 'react-bootstrap'
+import {Container,Col,Row} from 'react-bootstrap'
 import {FaEye,FaHeart,FaShareAlt} from 'react-icons/fa'
 import logo from '../../images/logo1.gif'
+import contact_styles from '../Contact/contact.module.css'
 
 export const About = () => {
     return (
@@ -20,7 +21,7 @@ export const About = () => {
 
     <div className={about_styles.content}>
         <span>welcome to our shop</span>
-        <h3>fresh and organic groceries</h3>
+        {/* <h3>fresh and organic groceries</h3> */}
         <p>Aruna Oil Mill is a renowned oil production company located in Erode, Tamil Nadu. Established in 1990, the company has been producing high-quality coconut, sesame, and refined oil for over three decades. The company is known for its commitment to quality and customer satisfaction, making it a popular choice among consumers.
 
 The production process at Aruna Oil Mill is highly sophisticated and efficient. For coconut oil production, the company uses the traditional cold-pressed method, which involves grinding the fresh coconut meat and then pressing it to extract the oil. This method ensures that the oil retains its natural nutrients and flavor. The company sources the best quality coconuts from local farmers to ensure that the final product is of the highest quality.
@@ -112,6 +113,26 @@ In conclusion, Aruna Oil Mill has been producing high-quality coconut, sesame, a
     </div>
 
 </div>
+<div className={contact_styles.contact}>
+    <Container className={contact_styles.boxcontainer}>
+        <h1 className={contact_styles.title}> Our <span>Location </span></h1>
+    </Container>
+
+<div className={contact_styles.contact}>
+
+    <Row className={contact_styles.row}>    
+
+        {/* <iframe className={contact_styles.map}  allowfullscreen="" loading="lazy"></iframe> */}
+        <Col>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.657374356943!2d77.69743591447121!3d11.359717291927344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9695a39160b07%3A0x8dbe2d60d40dbbda!2sARUNA%20OIL%20MILL!5e0!3m2!1sen!2sin!4v1679565799306!5m2!1sen!2sin" width="500" height="450" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </Col>
+        <Col>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.8136990222456!2d77.71238272095333!3d11.348314366138949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f372bceaabd%3A0x721207df225e38c6!2sAruna%20Oil%20Mill!5e0!3m2!1sen!2sin!4v1679565982567!5m2!1sen!2sin" width="500" height="450" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </Col>
+    </Row>
+
+</div>
+        </div>
         </>
     )
 }
